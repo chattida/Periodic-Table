@@ -19,3 +19,52 @@
 .flag-icon-th {
     background-image: url(../assets/flags/th.svg);
 }
+
+.element-box {
+    width: 61px;
+    height: 61px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 0.2em;
+}
+
+.empty-box {
+    width: 61px;
+    height: 61px;
+}
+
+box {
+    display: block;
+    line-height: 1;
+}
+
+number {
+    display: block;
+    font-size: 0.8em;
+    font-weight: normal;
+}
+
+symbol {
+    display: block;
+    font-size: 1.2em;
+    font-weight: bold;
+    width: 2.6em;
+    line-height: 0.9;
+}
+
+element {
+    display: block;
+    width: 4.5em;
+    line-height: 1;
+    font-size: 0.7em;
+    font-style: normal;
+    overflow: hidden;
+}
+
+mass {
+    display: block;
+    width: 4.456em;
+    line-height: 1;
+    font-size: 0.7em;
+    font-style: normal;
+    overflow: hidden;
+}
