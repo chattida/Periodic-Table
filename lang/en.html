@@ -7,6 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home | Periodic-Table</title>
     <link rel="icon" href="../assets/logo/logo.png" type="image/png">
+    <!-- ios -->
+    <meta name="apple-mobile-web-app-title" content="Periodic-Table">
+    <link rel="apple-touch-icon" href="../assets/logo/logo.png">
+    <!-- css -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/fontawesome.min.css">
     <link rel="stylesheet" href="../css/solid.min.css">
@@ -48,10 +52,10 @@
                         <i class="fas fa-globe-americas"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right mt-2" aria-labelledby="dropdownLanguage">
-                        <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-us mr-2"></span>English<i
+                        <a class="dropdown-item" href="./lang/change.php?lang=en"><span class="flag-icon flag-icon-us mr-2"></span>English<i
                                 class="fas fa-check text-success ml-1"></i>
                         </a>
-                        <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-th mr-2"></span>Thai</a>
+                        <a class="dropdown-item" href="./lang/change.php?lang=th"><span class="flag-icon flag-icon-th mr-2"></span>Thai</a>
                     </div>
                 </li>
             </ul>
@@ -60,15 +64,17 @@
 
     <!-- content -->
     <div class="container-fluid">
-        <div id="pt-table">
-
+        <div class="table-responsive-lg my-4">
+            <table id="pt-table" class="mx-auto"></table>
         </div>
     </div>
+    <!-- script -->
     <script src="../js/jquery-3.4.1.min.js"></script>
     <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/fontawesome.min.js"></script>
     <script src="../js/solid.min.js"></script>
+    <script src="../js/myScript/table.js"></script>
 </body>
 
 </html>
