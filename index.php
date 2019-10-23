@@ -2,13 +2,13 @@
 
 function page_lang() {
     if (check_cookie()) {
-        include("./lang/th.html");
+        include("./page/th.html");
     } else if ($_COOKIE['lang'] == "th") {
-        include("./lang/th.html");
+        include("./page/th.html");
     } else if ($_COOKIE['lang'] == "en") {
-        include("./lang/en.html");
+        include("./page/en.html");
     } else {
-        include("./lang/th.html");
+        include("./page/th.html");
         setcookie("lang", "th", time() + (86400 * 30), "/");
     }
 }
