@@ -59,16 +59,15 @@ function showTable(obj) {
                 }
                 txt += `<td class="element-box `;
                 //color table
-                if(`${obj[count].Type}` == "อโลหะ" || `${obj[count].Type}` == "Nonmetal") txt += `cl_Nonmetal`;
+                if(`${obj[count].Type}` == "อโลหะ" || `${obj[count].Type}` == "Nonmetal" || `${obj[count].Type}` == "Halogen") txt += `cl_Nonmetal`;
                 else if(`${obj[count].Type}` == "โลหะอัลคาไล" || `${obj[count].Type}` == "Alkali Metal") txt += `cl_AlkaliMetal`;
                 else if(`${obj[count].Type}` == "โลหะอัลคาไลน์เอิร์ธ" || `${obj[count].Type}` == "Alkaline Earth Metal") txt += `cl_AlkalineEarthMetal`;
                 else if(`${obj[count].Type}` == "กึ่งโลหะ" || `${obj[count].Type}` == "Metalloid") txt += `cl_Metalloid`;
                 else if(`${obj[count].Type}` == "ก๊าซเฉี่อย" || `${obj[count].Type}` == "Noble Gas") txt += `cl_NobleGas`;
-                else if(`${obj[count].Type}` == "โลหะ" || `${obj[count].Type}` == "Metal") txt += `cl_Metal`;
+                else if(`${obj[count].Type}` == "โลหะหลังทรานซิชัน" || `${obj[count].Type}` == "Post-transition metals") txt += `cl_PostMetal`;
                 else if(`${obj[count].Type}` == "โลหะทรานซิชัน" || `${obj[count].Type}` == "Transition Metal") txt += `cl_TransitionMetal`;
                 else if(`${obj[count].Type}` == "แลนทาไนด์" || `${obj[count].Type}` == "Lanthanide") txt += `cl_Lanthanide`;
                 else if(`${obj[count].Type}` == "Actinide" || `${obj[count].Type}` == "Actinide") txt += `cl_Actinide`;
-                else if(`${obj[count].Type}` == "Transactinide" || `${obj[count].Type}` == "artificial") txt += `cl_artificial`;
                 txt += `">
                             <box>
                                 <number>${obj[count].AtomicNumber}</number>
