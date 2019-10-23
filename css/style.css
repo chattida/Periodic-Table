@@ -68,3 +68,33 @@ mass {
     font-style: normal;
     overflow: hidden;
 }
+.cl_Nonmetal {
+    background: #4dff4d;
+}
+.cl_AlkaliMetal {
+    background: #ffd557;
+}
+.cl_AlkalineEarthMetal {
+    background: #ffff6d;
+}
+.cl_Metalloid {
+    background: #8ce284;
+}
+.cl_NobleGas {
+    background: #87d2ff;
+}
+.cl_Metal {
+    background: #a5e1d2;
+}
+.cl_TransitionMetal {
+    background: #e3c8c8;
+}
+.cl_Lanthanide {
+    background: #ffc6a9;
+}
+.cl_Actinide {
+    background: #f0c6e2;
+}
+.cl_artificial {
+    background: #e5e5e5;
+}
