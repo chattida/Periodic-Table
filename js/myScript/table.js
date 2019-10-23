@@ -34,10 +34,10 @@ function showTable(obj) {
                 txt += `<td class="empty-box"></td>`
             } else if (i == 6 && j == 3) {
                 // row = 6, col = 3
-                txt += `<td class="element-box text-center"><number>57-71</number></td>`
+                txt += `<td class="element-box text-center cl_Lanthanide"><number>57-71</number></td>`
             } else if (i == 7 && j == 3) {
                 // row = 7, col = 3
-                txt += `<td class="element-box text-center"><number>89-103</number></td>`
+                txt += `<td class="element-box text-center cl_Actinide"><number>89-103</number></td>`
             } else if (i == 8) {
                 // row = 8
                 txt += `<td class="empty-box"></td>`
@@ -57,7 +57,19 @@ function showTable(obj) {
                 } else if (i == 10 && j == 4) {
                     count = 88 // 89
                 }
-                txt += `<td class="element-box">
+                txt += `<td class="element-box `;
+                //color table
+                if(`${obj[count].Type}` == "อโลหะ" || `${obj[count].Type}` == "Nonmetal") txt += `cl_Nonmetal`;
+                else if(`${obj[count].Type}` == "โลหะอัลคาไล" || `${obj[count].Type}` == "Alkali Metal") txt += `cl_AlkaliMetal`;
+                else if(`${obj[count].Type}` == "โลหะอัลคาไลน์เอิร์ธ" || `${obj[count].Type}` == "Alkaline Earth Metal") txt += `cl_AlkalineEarthMetal`;
+                else if(`${obj[count].Type}` == "กึ่งโลหะ" || `${obj[count].Type}` == "Metalloid") txt += `cl_Metalloid`;
+                else if(`${obj[count].Type}` == "ก๊าซเฉี่อย" || `${obj[count].Type}` == "Noble Gas") txt += `cl_NobleGas`;
+                else if(`${obj[count].Type}` == "โลหะ" || `${obj[count].Type}` == "Metal") txt += `cl_Metal`;
+                else if(`${obj[count].Type}` == "โลหะทรานซิชัน" || `${obj[count].Type}` == "Transition Metal") txt += `cl_TransitionMetal`;
+                else if(`${obj[count].Type}` == "แลนทาไนด์" || `${obj[count].Type}` == "Lanthanide") txt += `cl_Lanthanide`;
+                else if(`${obj[count].Type}` == "Actinide" || `${obj[count].Type}` == "Actinide") txt += `cl_Actinide`;
+                else if(`${obj[count].Type}` == "Transactinide" || `${obj[count].Type}` == "artificial") txt += `cl_artificial`;
+                txt += `">
                             <box>
                                 <number>${obj[count].AtomicNumber}</number>
                                 <symbol>${obj[count].Symbol}</symbol>
