@@ -67,7 +67,7 @@ function showTable(obj) {
                 else if(`${obj[count].Type}` == "โลหะหลังทรานซิชัน" || `${obj[count].Type}` == "Post-transition metals") txt += `cl_PostMetal`;
                 else if(`${obj[count].Type}` == "โลหะทรานซิชัน" || `${obj[count].Type}` == "Transition Metal") txt += `cl_TransitionMetal`;
                 else if(`${obj[count].Type}` == "แลนทาไนด์" || `${obj[count].Type}` == "Lanthanide") txt += `cl_Lanthanide`;
-                else if(`${obj[count].Type}` == "Actinide" || `${obj[count].Type}` == "Actinide") txt += `cl_Actinide`;
+                else if(`${obj[count].Type}` == "แอกทิไนด์" || `${obj[count].Type}` == "Actinide") txt += `cl_Actinide`;
                 txt += `">
                             <box>
                                 <number>${obj[count].AtomicNumber}</number>
