@@ -58,6 +58,7 @@ element {
     font-size: 0.7em;
     font-style: normal;
     overflow: hidden;
+    white-space: nowrap;
 }
 
 mass {
