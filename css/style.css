@@ -58,7 +58,6 @@ element {
     font-size: 0.7em;
     font-style: normal;
     overflow: hidden;
-    white-space: nowrap;
 }
 
 mass {
@@ -70,28 +69,28 @@ mass {
     overflow: hidden;
 }
 .cl_Nonmetal {
-    background: #4dff4d;
+    background: #a1aedb;
 }
 .cl_AlkaliMetal {
-    background: #ffd557;
+    background: #f8a891;
 }
 .cl_AlkalineEarthMetal {
-    background: #ffff6d;
+    background: #f9c98e;
 }
 .cl_Metalloid {
-    background: #8ce284;
+    background: #a4d1d3;
 }
 .cl_NobleGas {
-    background: #87d2ff;
+    background: #c99cc9;
 }
 .cl_PostMetal {
-    background: #a5e1d2;
+    background: #9fbf91;
 }
 .cl_TransitionMetal {
-    background: #e3c8c8;
+    background: #f2f190;
 }
 .cl_Lanthanide {
-    background: #ffc6a9;
+    background: #eb9cc1;
 }
 .cl_Actinide {
     background: #f0c6e2;
