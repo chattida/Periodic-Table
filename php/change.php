@@ -7,12 +7,7 @@
     }
 
     // get path
-    if ($_GET['path'] == "index") {
-        $link = "../{$_GET['path']}.php";
-    } else {
-        $link = "./{$_GET['path']}.php";
-    }
-    
+    $link = "../{$_GET['path']}.php";
 
     // get id
     $id = $_GET['id'];

@@ -70,6 +70,7 @@ function showTable(obj) {
                 else if(`${obj[count].Type}` == "แอกทิไนด์" || `${obj[count].Type}` == "Actinide") txt += `cl_Actinide`;
                 else if(`${obj[count].Type}` == "") txt += `cl_artificial`;
                 txt += `" id="${obj[count].AtomicNumber}" onmouseover="toshow(${obj[count].AtomicNumber})">
+                            <a class="datalink" href="./data.php?id=${count + 1}">
                             <box>
                                 <number>${obj[count].AtomicNumber}</number>
                                 <symbol>${obj[count].Symbol}</symbol>

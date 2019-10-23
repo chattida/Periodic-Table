@@ -58,6 +58,7 @@ element {
     font-size: 0.7em;
     font-style: normal;
     overflow: hidden;
+    white-space: nowrap;
 }
 
 mass {
@@ -97,4 +98,18 @@ mass {
 }
 .cl_artificial {
     background: #e5e5e5;
+}
+
+.datalink {
+    color: inherit;
+    text-decoration: none;
+}
+
+.datalink:hover {
+    color: rgba(0, 0, 0, 0.6);
+    text-decoration: none;
+}
+
+.element-box:hover {
+    outline: 4px solid rgba(0, 132, 255, 0.5)
 }
