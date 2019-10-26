@@ -23,15 +23,27 @@ function showTable(obj) {
     for (let i = 1; i < 11; i++) {
         txt += `<tr>`
         for (let j = 1; j < 19; j++) {
-            if (i == 1 && (j > 1 && j < 18)) {
-                // row = 1, col > 1, col < 18
+            if (i == 1 && j == 2) {
+                // row = 1, col = 2
                 txt += `<td class="empty-box"></td>`
+            } else if (i == 1 && j == 3) {
+                // boxArea-1
+                txt += `<td colspan="3" rowspan="3" class="element-box text-center" id="boxArea-1">boxArea-1</td>`
+            } else if (i == 1 && j == 4) {
+                // boxArea-2
+                txt += `<td colspan="7" rowspan="3" class="element-box text-center" id="boxArea-2">boxArea-2</td>`
+            } else if (i == 1 && j == 5) {
+                // boxArea-3
+                txt += `<td colspan="5" rowspan="1" class="element-box text-center" id="boxArea-3">boxArea-3</td>`
+            } else if (i == 1 && (j > 5 && j < 18)) {
+                // row = 1, col > 5, col < 18
+                continue
             } else if (i == 2 && (j > 2 && j < 13)) {
                 // row = 2, col > 2, col < 13
-                txt += `<td class="empty-box"></td>`
+                continue
             } else if (i == 3 && (j > 2 && j < 13)) {
                 // row = 3, col > 2, col < 13
-                txt += `<td class="empty-box"></td>`
+                continue
             } else if (i == 6 && j == 3) {
                 // row = 6, col = 3
                 txt += `<td class="element-box text-center cl_Lanthanide" id="119"><number>57-71</number></td>`
