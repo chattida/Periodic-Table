@@ -1,5 +1,6 @@
 let table = document.getElementById("pt-table")
 let requestURL = ''
+let json_obj
 
 if (getCookie("lang") == "th") {
     requestURL = '../data/elements_th.json'
@@ -18,6 +19,7 @@ request.onreadystatechange = function () {
     request.send()
 
 function showTable(obj) {
+    json_obj = obj
     let txt = ""
     let count = 0 // 1
     for (let i = 1; i < 11; i++) {
@@ -28,13 +30,27 @@ function showTable(obj) {
                 txt += `<td class="empty-box"></td>`
             } else if (i == 1 && j == 3) {
                 // boxArea-1
-                txt += `<td colspan="3" rowspan="3" class="element-box text-center" id="boxArea-1">boxArea-1</td>`
+                console.log(count)
+                txt += `<td colspan="3" rowspan="3" id="boxArea-1">
+                        <table>
+                            <tr>
+                                <td class="element-bigbox ${colorTable(obj[0].Type)}">
+                                    <bigbox>
+                                        <bigNumber>${obj[0].AtomicNumber}</bigNumber>
+                                        <bigSymbol>${obj[0].Symbol}</bigSymbol>
+                                        <bigElement>${obj[0].Element}</bigElement>
+                                        <bigMass>${obj[0].AtomicMass}</bigMass>
+                                    </bigbox>
+                                </td>
+                            </tr>
+                        </table>
+                </td>`
             } else if (i == 1 && j == 4) {
                 // boxArea-2
-                txt += `<td colspan="7" rowspan="3" class="element-box text-center" id="boxArea-2">boxArea-2</td>`
+                txt += `<td colspan="7" rowspan="3" class="text-center" id="boxArea-2">boxArea-2</td>`
             } else if (i == 1 && j == 5) {
                 // boxArea-3
-                txt += `<td colspan="5" rowspan="1" class="element-box text-center" id="boxArea-3">boxArea-3</td>`
+                txt += `<td colspan="5" rowspan="1" class="text-center" id="boxArea-3">boxArea-3</td>`
             } else if (i == 1 && (j > 5 && j < 18)) {
                 // row = 1, col > 5, col < 18
                 continue
@@ -69,19 +85,9 @@ function showTable(obj) {
                 } else if (i == 10 && j == 4) {
                     count = 88 // 89
                 }
-                txt += `<td class="element-box `;
-                //color table
-                if(`${obj[count].Type}` == "อโลหะ" || `${obj[count].Type}` == "Nonmetal" || `${obj[count].Type}` == "Halogen") txt += `cl_Nonmetal`;
-                else if(`${obj[count].Type}` == "โลหะอัลคาไล" || `${obj[count].Type}` == "Alkali Metal") txt += `cl_AlkaliMetal`;
-                else if(`${obj[count].Type}` == "โลหะอัลคาไลน์เอิร์ธ" || `${obj[count].Type}` == "Alkaline Earth Metal") txt += `cl_AlkalineEarthMetal`;
-                else if(`${obj[count].Type}` == "กึ่งโลหะ" || `${obj[count].Type}` == "Metalloid") txt += `cl_Metalloid`;
-                else if(`${obj[count].Type}` == "ก๊าซเฉี่อย" || `${obj[count].Type}` == "Noble Gas") txt += `cl_NobleGas`;
-                else if(`${obj[count].Type}` == "โลหะหลังทรานซิชัน" || `${obj[count].Type}` == "Post-transition metals") txt += `cl_PostMetal`;
-                else if(`${obj[count].Type}` == "โลหะทรานซิชัน" || `${obj[count].Type}` == "Transition Metal") txt += `cl_TransitionMetal`;
-                else if(`${obj[count].Type}` == "แลนทาไนด์" || `${obj[count].Type}` == "Lanthanide") txt += `cl_Lanthanide`;
-                else if(`${obj[count].Type}` == "แอกทิไนด์" || `${obj[count].Type}` == "Actinide") txt += `cl_Actinide`;
-                else if(`${obj[count].Type}` == "") txt += `cl_artificial`;
-                txt += `" id="${obj[count].AtomicNumber}" onmouseover="toshow(${obj[count].AtomicNumber})">
+                txt += `<td class="element-box `
+                txt += colorTable(obj[count].Type)
+                txt += `" id="${obj[count].AtomicNumber}" onmouseover="toShow(${obj[count].AtomicNumber})"> 
                             <a class="datalink" href="./data.php?id=${count + 1}">
                             <box>
                                 <number>${obj[count].AtomicNumber}</number>
@@ -128,8 +134,41 @@ function mygroup(choose) {
     }
 }
 
+// get cookie function
 function getCookie(name) {
     let value = "; " + document.cookie;
     let parts = value.split("; " + name + "=");
     if (parts.length == 2) return parts.pop().split(";").shift();
+}
+
+// display big-element box
+function toShow(n) {
+    n = n - 1
+    let element_bigbox = document.getElementsByClassName("element-bigbox")
+    let bigNumber = document.getElementsByTagName("bigNumber")
+    let bigSymbol = document.getElementsByTagName("bigSymbol")
+    let bigElement = document.getElementsByTagName("bigElement")
+    let bigMass = document.getElementsByTagName("bigMass")
+    element_bigbox[0].className = "element-bigbox";
+    element_bigbox[0].classList.add(colorTable(json_obj[n].Type))
+    element_bigbox[0].style.display = "table-cell"
+    bigNumber[0].innerHTML = json_obj[n].AtomicNumber
+    bigSymbol[0].innerHTML = json_obj[n].Symbol
+    bigElement[0].innerHTML = json_obj[n].Element
+    bigMass[0].innerHTML = json_obj[n].AtomicMass
+}
+
+// colorTable function
+function colorTable(type) {
+    //color table
+    if(type == "อโลหะ" || type == "Nonmetal" || type == "Halogen") return `cl_Nonmetal`;
+    else if(type == "โลหะอัลคาไล" || type == "Alkali Metal") return `cl_AlkaliMetal`;
+    else if(type == "โลหะอัลคาไลน์เอิร์ธ" || type == "Alkaline Earth Metal") return `cl_AlkalineEarthMetal`;
+    else if(type == "กึ่งโลหะ" || type == "Metalloid") return `cl_Metalloid`;
+    else if(type == "ก๊าซเฉี่อย" || type == "Noble Gas") return `cl_NobleGas`;
+    else if(type == "โลหะหลังทรานซิชัน" || type == "Post-transition metals") return `cl_PostMetal`;
+    else if(type == "โลหะทรานซิชัน" || type == "Transition Metal") return `cl_TransitionMetal`;
+    else if(type == "แลนทาไนด์" || type == "Lanthanide") return `cl_Lanthanide`;
+    else if(type == "แอกทิไนด์" || type == "Actinide") return `cl_Actinide`;
+    else if(type == "") return `cl_artificial`;
 }
