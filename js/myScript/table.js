@@ -110,22 +110,15 @@ function mygroup(choose) {
         myset = document.getElementById(i);
         if (choose == "more1" || choose == "more2" || choose == "x") {
             if ((choose == "more1" && (i>=57 && i<=71)) || (choose == "more2" && (i>=89 && i<=103))) myset.style.opacity = "1";
-            else if (choose == "x") {
-                myset.style.opacity = "1";
-                document.getElementById(119).style.opacity = "1";
-                document.getElementById(120).style.opacity = "1";
-            }
+            else if (choose == "x") myset.style.opacity = "1";
             else myset.style.opacity = "0.25";
-        } else if (choose == json_obj[i-1].Group) {
-            myset.style.opacity = "1";
-            if (choose == 3) {
-                document.getElementById(119).style.opacity = "1";
-                document.getElementById(120).style.opacity = "1";
-            } else {
-                document.getElementById(119).style.opacity = "0.25";
-                document.getElementById(120).style.opacity = "0.25";
-            }
-        } else myset.style.opacity = "0.25";
+        }
+        else if ((choose == json_obj[i-1].Phase || (json_obj[i-1].Phase == "ของเทียม" && choose == "ของแข็ง") || 
+                (json_obj[i-1].Phase == "artificial" && choose == "liquid" && (i==43 || i==80)) || 
+                (json_obj[i-1].Phase == "artificial" && choose == "solid" && ((i>=57 && i<=71) || (i>=89 && i<=103)))) && i<104) myset.style.opacity = "1";
+        else if (choose == 'Unknown' && i>=104) myset.style.opacity = "1";
+        else if (choose == json_obj[i-1].Group) myset.style.opacity = "1";
+        else myset.style.opacity = "0.25";
     }
 }
 
