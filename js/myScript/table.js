@@ -1,4 +1,5 @@
 let table = document.getElementById("pt-table")
+let groupselect = document.getElementById("pt-group")
 let requestURL = ''
 let json_obj
 
@@ -20,8 +21,29 @@ request.onreadystatechange = function () {
 
 function showTable(obj) {
     json_obj = obj
-    let txt = ""
-    let count = 0 // 1
+    let txt = "", groupshow = ""
+    let count = 0 // 
+    if (getCookie("lang") == "th") groupshow += `หมู่ธาตุ : `
+    else groupshow += `Group: `
+    groupshow += `<a onmouseover="mygroup(1)" class="btn btn-light">1</a>
+            <a onmouseover="mygroup(2)" class="btn btn-light">2</a>
+            <a onmouseover="mygroup(3)" class="btn btn-light">3</a>
+            <a onmouseover="mygroup(4)" class="btn btn-light">4</a>
+            <a onmouseover="mygroup(5)" class="btn btn-light">5</a>
+            <a onmouseover="mygroup(6)" class="btn btn-light">6</a>
+            <a onmouseover="mygroup(7)" class="btn btn-light">7</a>
+            <a onmouseover="mygroup(8)" class="btn btn-light">8</a>
+            <a onmouseover="mygroup(9)" class="btn btn-light">9</a>
+            <a onmouseover="mygroup(10)" class="btn btn-light">10</a>
+            <a onmouseover="mygroup(11)" class="btn btn-light">11</a>
+            <a onmouseover="mygroup(12)" class="btn btn-light">12</a>
+            <a onmouseover="mygroup(13)" class="btn btn-light">13</a>
+            <a onmouseover="mygroup(14)" class="btn btn-light">14</a>
+            <a onmouseover="mygroup(15)" class="btn btn-light">15</a>
+            <a onmouseover="mygroup(16)" class="btn btn-light">16</a>
+            <a onmouseover="mygroup(17)" class="btn btn-light">17</a>
+            <a onmouseover="mygroup(18)" class="btn btn-light">18</a>`
+    groupselect.innerHTML = groupshow
     for (let i = 1; i < 11; i++) {
         txt += `<tr>`
         for (let j = 1; j < 19; j++) {
@@ -50,20 +72,71 @@ function showTable(obj) {
                 txt += `<td colspan="7" rowspan="3" class="text-center" id="boxArea-2">boxArea-2</td>`
             } else if (i == 1 && j == 5) {
                 // boxArea-3
-                txt += `<td colspan="5" rowspan="1" class="text-center" id="pt-phase">`
+                txt += `<td colspan="5" rowspan="1" class="text-left" id="pt-phase">`
                 if (getCookie("lang") == "th") {
                     txt += `สถานะ : 
                     <a onmouseover="mygroup('ของแข็ง')" class="btn btn-light" alt="ของแข็ง" title="ของแข็ง"><i class="fas fa-cubes"></i></a>
                     <a onmouseover="mygroup('ของเหลว')" class="btn btn-light" alt="ของเหลว" title="ของเหลว"><i class="fas fa-tint"></i></a>
                     <a onmouseover="mygroup('ก๊าซ')" class="btn btn-light" alt="ก๊าซ" title="ก๊าซ"><i class="fas fa-wind"></i></a>
-                    <a onmouseover="mygroup('Unknown')" class="btn btn-light" alt="ไม่ทราบ" title="ไม่ทราบ"><i class="fas fa-question-circle"></i></a>`
+                    <a onmouseover="mygroup('Unknown')" class="btn btn-light" alt="ไม่ทราบ" title="ไม่ทราบ"><i class="fas fa-question-circle"></i></a><br>
+                    ประเภท : 
+                    <div class="dropdown show d-inline">
+                        <a onmouseover="mygroup('Metal')" class="btn btn-light" alt="โลหะ" title="โลหะ" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            โลหะ
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a onmouseover="mygroup('โลหะอัลคาไล')" class="dropdown-item">โลหะอัลคาไล</a>
+                            <a onmouseover="mygroup('โลหะอัลคาไลน์เอิร์ธ')" class="dropdown-item">โลหะอัลคาไลน์เอิร์ธ</a>
+                            <a onmouseover="mygroup('แลนทาไนด์')" class="dropdown-item">แลนทาไนด์</a>
+                            <a onmouseover="mygroup('แอกทิไนด์')" class="dropdown-item">แอกทิไนด์</a>
+                            <a onmouseover="mygroup('โลหะทรานซิชัน')" class="dropdown-item">โลหะทรานซิชัน</a>
+                            <a onmouseover="mygroup('โลหะหลังทรานซิชัน')" class="dropdown-item">โลหะหลังทรานซิชัน</a>
+                        </div>
+                    </div>
+                    <a onmouseover="mygroup('Metalloid')" class="btn btn-light d-inline">กึ่งโลหะ</a>
+                    <div class="dropdown show d-inline">
+                        <a onmouseover="mygroup('Non-metal')" class="btn btn-light" alt="อโลหะ" title="อโลหะ" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            อโลหะ
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a onmouseover="mygroup('อโลหะ')" class="dropdown-item">อโลหะ</a>
+                            <a onmouseover="mygroup('ก๊าซเฉี่อย')" class="dropdown-item">ก๊าซเฉี่อย</a>
+                        </div>
+                    </div>
+                    `
                 } else if (getCookie("lang") == "en") {
                     txt += `
                     Phase : 
                             <a onmouseover="mygroup('solid')" class="btn btn-light" alt="Solid" title="Solid"><i class="fas fa-cubes"></i></a>
                             <a onmouseover="mygroup('liquid')" class="btn btn-light" alt="Liquid" title="Liquid"><i class="fas fa-tint"></i></a>
                             <a onmouseover="mygroup('gas')" class="btn btn-light" alt="Gas" title="Gas"><i class="fas fa-wind"></i></a>
-                            <a onmouseover="mygroup('Unknown')" class="btn btn-light" alt="Unknown" title="Unknown"><i class="fas fa-question-circle"></i></a>`
+                            <a onmouseover="mygroup('Unknown')" class="btn btn-light" alt="Unknown" title="Unknown"><i class="fas fa-question-circle"></i></a><br>
+                            Type : 
+                            <div class="dropdown show d-inline">
+                                <a onmouseover="mygroup('Metal')" class="btn btn-light" alt="Metal" title="Metal" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Metal
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a onmouseover="mygroup('Alkali Metal')" class="dropdown-item">AlkaliMetal</a>
+                                    <a onmouseover="mygroup('Alkaline Earth Metal')" class="dropdown-item">Alkaline Earth Metal</a>
+                                    <a onmouseover="mygroup('Lanthanide')" class="dropdown-item">Lanthanide</a>
+                                    <a onmouseover="mygroup('Actinide')" class="dropdown-item">Actinide</a>
+                                    <a onmouseover="mygroup('Transition Metal')" class="dropdown-item">Transition Metal</a>
+                                    <a onmouseover="mygroup('Post-transition metals')" class="dropdown-item">Post Transition Metal</a>
+                                </div>
+                            </div>
+                            <a onmouseover="mygroup('Metalloid')" class="btn btn-light d-inline">Metalloid</a>
+                            <div class="dropdown show d-inline">
+                                <a onmouseover="mygroup('Non-metal')" class="btn btn-light" alt="Nonmetal" title="Nonmetal" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Nonmetal
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a onmouseover="mygroup('Nonmetal')" class="dropdown-item">Nonmetal</a>
+                                    <a onmouseover="mygroup('Halogen')" class="dropdown-item">Halogen</a>
+                                    <a onmouseover="mygroup('Noble Gas')" class="dropdown-item">NobleGas</a>
+                                </div>
+                            </div>
+                            `
                 }
                 txt += `</td>`
             } else if (i == 1 && (j > 5 && j < 18)) {
@@ -121,20 +194,36 @@ function showTable(obj) {
 
 //กลุ่มธาติ
 function mygroup(choose) {
+    let metal = ["โลหะอัลคาไล", "โลหะอัลคาไลน์เอิร์ธ", "แลนทาไนด์", "แอกทิไนด์", "โลหะทรานซิชัน", "โลหะหลังทรานซิชัน", 
+                "Alkali Metal", "Alkaline Earth Metal", "Lanthanide", "Actinide", "Transition Metal", "Post-transition metals"]
+    let non_metal = ["อโลหะ", "ก๊าซเฉี่อย", "Nonmetal", "Halogen", "Noble Gas"]
     for(let i=1; i<=118; i++) {
         myset = document.getElementById(i);
         if (choose == "more1" || choose == "more2" || choose == "x") {
             if ((choose == "more1" && (i>=57 && i<=71)) || (choose == "more2" && (i>=89 && i<=103))) 
-                myset.style.opacity = "1";
-            else if (choose == "x") myset.style.opacity = "1";
-            else myset.style.opacity = "0.25";
+                myset.style.opacity = "1"
+            else if (choose == "x") myset.style.opacity = "1"
+            else myset.style.opacity = "0.25"
         }
         else if ((choose == json_obj[i-1].Phase || (json_obj[i-1].Phase == "ของเทียม" && choose == "ของแข็ง") || 
                 (json_obj[i-1].Phase == "artificial" && choose == "solid")) && i<104) 
-                myset.style.opacity = "1";
-        else if (choose == 'Unknown' && i>=104) myset.style.opacity = "1";
-        else if (choose == json_obj[i-1].Group) myset.style.opacity = "1";
-        else myset.style.opacity = "0.25";
+                myset.style.opacity = "1"
+        else if (choose == 'Unknown' && i>=104) myset.style.opacity = "1"
+        else if (choose == json_obj[i-1].Group) myset.style.opacity = "1"
+        else if (choose == 'Metal') {
+            if (metal.indexOf(json_obj[i-1].Type) != -1) myset.style.opacity = "1"
+            else myset.style.opacity = "0.25"
+        }
+        else if (choose == "Metalloid") {
+            if (json_obj[i-1].Type == "กึ่งโลหะ" || json_obj[i-1].Type == "Metalloid") myset.style.opacity = "1"
+            else myset.style.opacity = "0.25"
+        }
+        else if (choose == 'Non-metal') {
+            if (non_metal.indexOf(json_obj[i-1].Type) != -1) myset.style.opacity = "1"
+            else myset.style.opacity = "0.25"
+        }
+        else if (json_obj[i-1].Type == choose) myset.style.opacity = "1"
+        else myset.style.opacity = "0.25"
     }
 }
 
