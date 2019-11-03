@@ -11,6 +11,8 @@
 
     // get id
     $id = $_GET['id'];
+    
+    // if id had value
     if (isset($id)) {
         $link = $link . "?id=" . $id;
     }
@@ -18,6 +20,7 @@
     // redirect
     redirect($link);
 
+    // reditect function
     function redirect($url) {
         ob_start();
         while (ob_get_status()) {

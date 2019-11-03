@@ -166,3 +166,8 @@ bigMass {
 .element-box:hover {
     outline: 4px solid rgba(0, 132, 255, 0.5);
 }
+
+.link {
+    display: block;
+    font-size: 1.2em;
+}
