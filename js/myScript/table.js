@@ -52,7 +52,7 @@ function showTable(obj) {
                 // boxArea-3
                 txt += `<td colspan="5" rowspan="1" class="text-center" id="pt-phase">`
                 if (getCookie("lang") == "th") {
-                    txt += `ประเภทธาตุ : 
+                    txt += `สถานะ : 
                     <a onmouseover="mygroup('ของแข็ง')" class="btn btn-light" alt="ของแข็ง" title="ของแข็ง"><i class="fas fa-cubes"></i></a>
                     <a onmouseover="mygroup('ของเหลว')" class="btn btn-light" alt="ของเหลว" title="ของเหลว"><i class="fas fa-tint"></i></a>
                     <a onmouseover="mygroup('ก๊าซ')" class="btn btn-light" alt="ก๊าซ" title="ก๊าซ"><i class="fas fa-wind"></i></a>
