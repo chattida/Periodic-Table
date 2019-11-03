@@ -50,7 +50,22 @@ function showTable(obj) {
                 txt += `<td colspan="7" rowspan="3" class="text-center" id="boxArea-2">boxArea-2</td>`
             } else if (i == 1 && j == 5) {
                 // boxArea-3
-                txt += `<td colspan="5" rowspan="1" class="text-center" id="boxArea-3">boxArea-3</td>`
+                txt += `<td colspan="5" rowspan="1" class="text-center" id="pt-phase">`
+                if (getCookie("lang") == "th") {
+                    txt += `ประเภทธาตุ : 
+                    <a onmouseover="mygroup('ของแข็ง')" class="btn btn-light" alt="ของแข็ง" title="ของแข็ง"><i class="fas fa-cubes"></i></a>
+                    <a onmouseover="mygroup('ของเหลว')" class="btn btn-light" alt="ของเหลว" title="ของเหลว"><i class="fas fa-tint"></i></a>
+                    <a onmouseover="mygroup('ก๊าซ')" class="btn btn-light" alt="ก๊าซ" title="ก๊าซ"><i class="fas fa-wind"></i></a>
+                    <a onmouseover="mygroup('Unknown')" class="btn btn-light" alt="ไม่ทราบ" title="ไม่ทราบ"><i class="fas fa-question-circle"></i></a>`
+                } else if (getCookie("lang") == "en") {
+                    txt += `
+                    Phase : 
+                            <a onmouseover="mygroup('solid')" class="btn btn-light" alt="Solid" title="Solid"><i class="fas fa-cubes"></i></a>
+                            <a onmouseover="mygroup('liquid')" class="btn btn-light" alt="Liquid" title="Liquid"><i class="fas fa-tint"></i></a>
+                            <a onmouseover="mygroup('gas')" class="btn btn-light" alt="Gas" title="Gas"><i class="fas fa-wind"></i></a>
+                            <a onmouseover="mygroup('Unknown')" class="btn btn-light" alt="Unknown" title="Unknown"><i class="fas fa-question-circle"></i></a>`
+                }
+                txt += `</td>`
             } else if (i == 1 && (j > 5 && j < 18)) {
                 // row = 1, col > 5, col < 18
                 continue
