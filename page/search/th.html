@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Element | Periodic-Table</title>
+    <title>ค้นหาธาตุ | ตารางธาตุ</title>
     <link rel="icon" href="../../assets/logo/logo.png" type="image/png">
     <!-- ios -->
-    <meta name="apple-mobile-web-app-title" content="Periodic-Table">
+    <meta name="apple-mobile-web-app-title" content="ตารางธาตุ">
     <link rel="apple-touch-icon" href="../../assets/logo/logo.png">
     <!-- css -->
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
@@ -21,8 +21,8 @@
     <!-- navbar -->
     <nav class="navbar navbar-light bg-light navbar-expand-lg pr-2">
         <a class="navbar-brand" href="index.php">
-            <img src="../../assets/logo/logo.png" width="30" height="30" alt="Periodic-Table's logo" class="mr-1">
-            Periodic-Table
+            <img src="../../assets/logo/logo.png" width="30" height="30" alt="โลโก้เว็บไซต์ ตารางธาตุ" class="mr-1">
+            ตารางธาตุ
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,16 +32,16 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php">Home</a>
+                    <a class="nav-link" href="index.php">หน้าหลัก</a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="list.php">Elements</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="list.php">ธาตุ</a>
                 </li>
             </ul>
             <!-- search -->
             <form class="form-inline" action="/search.php" method="POST">
                 <div class="input-group">
-                    <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="msg">
+                    <input class="form-control" type="search" placeholder="ค้นหา" aria-label="Search" name="msg">
                     <div class="input-group-append">
                         <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search"></i></button>
                     </div>
@@ -55,10 +55,11 @@
                         <i class="fas fa-globe-americas"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right mt-2" aria-labelledby="dropdownLanguage">
-                        <a class="dropdown-item" href="../php/change.php?lang=en&path=list"><span class="flag-icon flag-icon-us mr-2"></span>English<i
-                                class="fas fa-check text-success ml-1"></i>
-                        </a>
-                        <a class="dropdown-item" href="../php/change.php?lang=th&path=list"><span class="flag-icon flag-icon-th mr-2"></span>Thai</a>
+                        <a class="dropdown-item" href="../../php/change.php?lang=en&path=search"><span
+                                class="flag-icon flag-icon-us mr-2"></span>อังกฤษ</a>
+                        <a class="dropdown-item" href="../../php/change.php?lang=en&path=search"><span
+                                class="flag-icon flag-icon-th mr-2"></span>ไทย<i
+                                class="fas fa-check text-success ml-1"></i></a>
                     </div>
                 </li>
             </ul>
@@ -67,9 +68,18 @@
 
     <!-- content -->
     <div class="container">
-        <h3 class="my-3">Elements</h3>
+        <h3 class="my-3">ค้นหาธาตุ</h3>
         <hr>
-        <div id="element_list"></div>
+        <div>
+            <form class="form-inline justify-content-center my-3" action="/search.php" method="POST">
+                <input type="search" class="form-control" id="searchBox" aria-describedby="searchBox" placeholder="ชื่อธาตุ" value="<?php echo($_POST['msg']) ?>" name="msg">
+                <button type="submit" class="btn btn-primary ml-2 my-2">ค้นหา</button>
+            </form>
+            <div class="text-center">
+                <h4 id="text" class="my-4 py-3 alert alert-success d-none"></h4>
+            </div>
+            <div id="searchList" class="my-2 justify-content-center row"></div>
+        </div>
     </div>
     <!-- script -->
     <script src="../../js/jquery-3.4.1.min.js"></script>
@@ -77,7 +87,8 @@
     <script src="../../js/bootstrap.min.js"></script>
     <script src="../../js/fontawesome.min.js"></script>
     <script src="../../js/solid.min.js"></script>
-    <script src="../../js/myScript/list.js"></script>
+    <script src="../../js/fuse.min.js"></script>
+    <script src="../../js/myScript/search.js"></script>
 </body>
 
 </html>

@@ -49,8 +49,11 @@
 
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="index.php">หน้าหลัก</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="list.php">ธาตุ</a>
                 </li>
             </ul>
             <!-- search -->
