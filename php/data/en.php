@@ -53,15 +53,18 @@
                     <a class="nav-link" href="index.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="list.php">Elements</a>
+                    <a class="nav-link" href="list.php">Element</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="developer.php">Developer</a>
                 </li>
             </ul>
             <!-- search -->
-            <form class="form-inline">
+            <form class="form-inline" action="/search.php" method="POST">
                 <div class="input-group">
-                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="msg">
                     <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i></button>
+                        <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search"></i></button>
                     </div>
                 </div>
             </form>
@@ -97,6 +100,9 @@
         ");
     ?>
         </div>
+        <!-- footer -->
+        <hr>
+        <p class="text-center text-dark"><i class="fas fa-flask"></i> Periodic-Table | Web Technology Project (2019)</p>
     </div>
 
     <!-- script -->

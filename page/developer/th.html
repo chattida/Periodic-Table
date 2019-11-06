@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ค้นหาธาตุ | ตารางธาตุ</title>
+    <title>ผู้พัฒนา | ตารางธาตุ</title>
     <link rel="icon" href="../../assets/logo/logo.png" type="image/png">
     <!-- ios -->
     <meta name="apple-mobile-web-app-title" content="ตารางธาตุ">
@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/fontawesome.min.css">
     <link rel="stylesheet" href="../../css/solid.min.css">
+    <link rel="stylesheet" href="../../css/brands.min.css">
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 
@@ -37,7 +38,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="list.php">ธาตุ</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="developer.php">ผู้พัฒนา</a>
                 </li>
             </ul>
@@ -58,9 +59,9 @@
                         <i class="fas fa-globe-americas"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right mt-2" aria-labelledby="dropdownLanguage">
-                        <a class="dropdown-item" href="../../php/change.php?lang=en&path=search"><span
+                        <a class="dropdown-item" href="../../php/change.php?lang=en&path=developer"><span
                                 class="flag-icon flag-icon-us mr-2"></span>อังกฤษ</a>
-                        <a class="dropdown-item" href="../../php/change.php?lang=en&path=search"><span
+                        <a class="dropdown-item" href="../../php/change.php?lang=en&path=developer"><span
                                 class="flag-icon flag-icon-th mr-2"></span>ไทย<i
                                 class="fas fa-check text-success ml-1"></i></a>
                     </div>
@@ -71,18 +72,9 @@
 
     <!-- content -->
     <div class="container">
-        <h3 class="my-3">ค้นหาธาตุ</h3>
+        <h3 class="my-3">สมาชิก</h3>
         <hr>
-        <div>
-            <form class="form-inline justify-content-center my-3" action="search.php" method="POST">
-                <input type="search" class="form-control" id="searchBox" aria-describedby="searchBox" placeholder="ชื่อธาตุ" value="<?php echo($_POST['msg']) ?>" name="msg">
-                <button type="submit" class="btn btn-primary ml-2 my-2">ค้นหา</button>
-            </form>
-            <div class="text-center">
-                <h4 id="text" class="my-4 py-3 alert alert-success d-none"></h4>
-            </div>
-            <div id="searchList" class="my-2 justify-content-center row"></div>
-        </div>
+        <div id="memberList" class="row justify-content-center"></div>
         <!-- footer -->
         <hr>
         <p class="text-center text-dark"><i class="fas fa-flask"></i> Periodic-Table | Web Technology Project (2019)</p>
@@ -93,8 +85,8 @@
     <script src="../../js/bootstrap.min.js"></script>
     <script src="../../js/fontawesome.min.js"></script>
     <script src="../../js/solid.min.js"></script>
-    <script src="../../js/fuse.min.js"></script>
-    <script src="../../js/myScript/search.js"></script>
+    <script src="../../js/brands.min.js"></script>
+    <script src="../../js/myScript/developer.js"></script>
 </body>
 
 </html>
