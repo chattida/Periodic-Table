@@ -1,5 +1,11 @@
-let requestURL = '../../data/elements_th.json'
+let requestURL = ''
 let json_obj
+
+if (getCookie("lang") == "th") {
+    requestURL = '../../data/elements_th.json'
+} else if (getCookie("lang") == "en") {
+    requestURL = '../../data/elements_en.json'
+}
 
 let request = new XMLHttpRequest()
 request.onreadystatechange = function () {
@@ -13,10 +19,17 @@ request.send()
 
 function generateQuiz(obj) {
     json_obj = obj
-    let qArray = {}
-    var randomItem = json_obj[Math.floor(Math.random() * json_obj.length)]
-    console.log(randomItem)
-
+    let qArr = []
+    let qSet = new Set()
+    for (i = 0; i < 5; i++) {
+        while (qSet.size < 4) qSet.add(json_obj[Math.floor(Math.random() * json_obj.length)]);
+        console.log(qSet)
+        let array = Array.from(qSet);
+        qArr.push(array)
+        qSet.clear()
+    }
+    console.log(qArr)
+    return qArr
 }
 
 // get cookie function
