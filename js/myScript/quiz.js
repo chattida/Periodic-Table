@@ -1,18 +1,27 @@
-let element_list = document.getElementById("element_list")
-let requestURL = ''
-
-if (getCookie("lang") == "th") {
-    requestURL = '../data/elements_th.json'
-} else if (getCookie("lang") == "en") {
-    requestURL = '../data/elements_en.json'
-}
+let requestURL = '../../data/elements_th.json'
+let json_obj
 
 let request = new XMLHttpRequest()
 request.onreadystatechange = function () {
     if (request.readyState == 4 && request.status == 200) {
         let dataJSON = JSON.parse(request.responseText)
-            showList(dataJSON)
-        }
+        generateQuiz(dataJSON)
     }
-    request.open("GET", requestURL, true)
-    request.send()
+}
+request.open("GET", requestURL, true)
+request.send()
+
+function generateQuiz(obj) {
+    json_obj = obj
+    let qArray = {}
+    var randomItem = json_obj[Math.floor(Math.random() * json_obj.length)]
+    console.log(randomItem)
+
+}
+
+// get cookie function
+function getCookie(name) {
+    let value = "; " + document.cookie;
+    let parts = value.split("; " + name + "=");
+    if (parts.length == 2) return parts.pop().split(";").shift();
+}
