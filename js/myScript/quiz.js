@@ -11,7 +11,8 @@ let request = new XMLHttpRequest()
 request.onreadystatechange = function () {
     if (request.readyState == 4 && request.status == 200) {
         let dataJSON = JSON.parse(request.responseText)
-        generateQuiz(dataJSON)
+        let presetAns = generateQuiz(dataJSON)
+        displayQuiz(presetAns)
     }
 }
 request.open("GET", requestURL, true)
@@ -23,13 +24,16 @@ function generateQuiz(obj) {
     let qSet = new Set()
     for (i = 0; i < 5; i++) {
         while (qSet.size < 4) qSet.add(json_obj[Math.floor(Math.random() * json_obj.length)]);
-        console.log(qSet)
         let array = Array.from(qSet);
         qArr.push(array)
         qSet.clear()
     }
-    console.log(qArr)
     return qArr
+}
+
+function displayQuiz(obj) {
+    json_obj = obj
+    console.log(json_obj[2][3].Element)
 }
 
 // get cookie function
