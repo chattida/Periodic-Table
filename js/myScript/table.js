@@ -73,9 +73,9 @@ function showTable(obj) {
                 if (getCookie("lang") == "th") {
                     txt += `<center><table class="myType text-center">
                                 <tr>
-                                    <th colspan="5" class="half_border"><a onmouseover="mygroup('Metal')">โลหะ</a></th>
+                                    <th colspan="5"><a onmouseover="mygroup('Metal')">โลหะ</a></th>
                                     <th rowspan="4" class="cl_Metalloid"><div class="rotate"><div><a onmouseover="mygroup('Metalloid')">กึ่งโลหะ</a></div></div></th>
-                                    <th colspan="2" class="half_border"><a onmouseover="mygroup('Non-metal')">อโลหะ</a></th>
+                                    <th colspan="2"><a onmouseover="mygroup('Non-metal')">อโลหะ</a></th>
                                 <tr>
                                 <tr>
                                     <td rowspan="2" class="cl_AlkaliMetal"><div class="rotate"><div><a onmouseover="mygroup('โลหะอัลคาไล')">โลหะอัลคาไล</a></div></div></td>
@@ -93,9 +93,9 @@ function showTable(obj) {
                 } else if (getCookie("lang") == "en") {
                     txt += `<center><table class="myType text-center">
                                 <tr>
-                                    <th colspan="5" class="half_border"><a onmouseover="mygroup('Metal')">Metal</a></th>
+                                    <th colspan="5"><a onmouseover="mygroup('Metal')">Metal</a></th>
                                     <th rowspan="4" class="cl_Metalloid"><div class="rotate"><div><a onmouseover="mygroup('Metalloid')">Metalloid</a></div></div></th>
-                                    <th colspan="3" class="half_border"><a onmouseover="mygroup('Non-metal')">NonMetal</a></th>
+                                    <th colspan="3"><a onmouseover="mygroup('Non-metal')">NonMetal</a></th>
                                 <tr>
                                 <tr>
                                     <td rowspan="2" class="cl_AlkaliMetal"><div class="rotate"><div><a onmouseover="mygroup('Alkali Metal')">AlkaliMetal</a></div></div></td>
