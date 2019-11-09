@@ -73,42 +73,42 @@ function showTable(obj) {
                 if (getCookie("lang") == "th") {
                     txt += `<center><table class="myType text-center">
                                 <tr>
-                                    <th colspan="5"><a onmouseover="mygroup('Metal')">โลหะ</a></th>
-                                    <th rowspan="4" class="cl_Metalloid"><div class="rotate"><div><a onmouseover="mygroup('Metalloid')">กึ่งโลหะ</a></div></div></th>
-                                    <th colspan="2"><a onmouseover="mygroup('Non-metal')">อโลหะ</a></th>
+                                    <th colspan="5" onmouseover="mygroup('Metal')"><a>โลหะ</a></th>
+                                    <th rowspan="4" class="cl_Metalloid" onmouseover="mygroup('Metalloid')"><div class="rotate"><div><a>กึ่งโลหะ</a></div></div></th>
+                                    <th colspan="2" onmouseover="mygroup('Non-metal')"><a>อโลหะ</a></th>
                                 <tr>
                                 <tr>
-                                    <td rowspan="2" class="cl_AlkaliMetal"><div class="rotate"><div><a onmouseover="mygroup('โลหะอัลคาไล')">โลหะอัลคาไล</a></div></div></td>
-                                    <td rowspan="2" class="cl_AlkalineEarthMetal"><div class="rotate"><div><a onmouseover="mygroup('โลหะอัลคาไลน์เอิร์ธ')">โลหะอัลคาไลน์เอิร์ธ</a></div></div></td>
-                                    <td class="cl_Lanthanide"><a onmouseover="mygroup('แลนทาไนด์')">แลนทาไนด์</a></td>
-                                    <td rowspan="2" class="cl_TransitionMetal"><div class="rotate"><div><a onmouseover="mygroup('โลหะทรานซิชัน')">โลหะทรานซิชัน</a></div></div></td>
-                                    <td rowspan="2" class="cl_PostTransitionMetal"><div class="rotate"><div><a onmouseover="mygroup('โลหะหลังทรานซิชัน')">โลหะหลังทรานซิชัน</a></div></div></td>
-                                    <td rowspan="2" class="cl_Nonmetal"><div class="rotate"><div><a onmouseover="mygroup('อโลหะ')">อโลหะ</a></div></div></td>
-                                    <td rowspan="2" class="cl_NobleGas"><div class="rotate"><div><a onmouseover="mygroup('ก๊าซเฉี่อย')">ก๊าซเฉี่อย</a></div></div></td>
+                                    <td rowspan="2" class="cl_AlkaliMetal" onmouseover="mygroup('โลหะอัลคาไล')"><div class="rotate"><div><a>โลหะอัลคาไล</a></div></div></td>
+                                    <td rowspan="2" class="cl_AlkalineEarthMetal" onmouseover="mygroup('โลหะอัลคาไลน์เอิร์ธ')"><div class="rotate"><div><a>โลหะอัลคาไลน์เอิร์ธ</a></div></div></td>
+                                    <td class="cl_Lanthanide" onmouseover="mygroup('แลนทาไนด์')"><a>แลนทาไนด์</a></td>
+                                    <td rowspan="2" class="cl_TransitionMetal" onmouseover="mygroup('โลหะทรานซิชัน')"><div class="rotate"><div><a>โลหะทรานซิชัน</a></div></div></td>
+                                    <td rowspan="2" class="cl_PostTransitionMetal" onmouseover="mygroup('โลหะหลังทรานซิชัน')"><div class="rotate"><div><a>โลหะหลังทรานซิชัน</a></div></div></td>
+                                    <td rowspan="2" class="cl_Nonmetal" onmouseover="mygroup('อโลหะ')"><div class="rotate"><div><a>อโลหะ</a></div></div></td>
+                                    <td rowspan="2" class="cl_NobleGas" onmouseover="mygroup('ก๊าซเฉี่อย')"><div class="rotate"><div><a>ก๊าซเฉี่อย</a></div></div></td>
                                 </tr>
                                 <tr>
-                                    <td class="cl_Actinide"><a onmouseover="mygroup('แอกทิไนด์')">แอกทิไนด์</a></td>
+                                    <td class="cl_Actinide" onmouseover="mygroup('แอกทิไนด์')"><a>แอกทิไนด์</a></td>
                                 </tr>
                             </table></center>`
                 } else if (getCookie("lang") == "en") {
                     txt += `<center><table class="myType text-center">
                                 <tr>
-                                    <th colspan="5"><a onmouseover="mygroup('Metal')">Metal</a></th>
-                                    <th rowspan="4" class="cl_Metalloid"><div class="rotate"><div><a onmouseover="mygroup('Metalloid')">Metalloid</a></div></div></th>
-                                    <th colspan="3"><a onmouseover="mygroup('Non-metal')">NonMetal</a></th>
+                                    <th colspan="5" onmouseover="mygroup('Metal')"><a>Metal</a></th>
+                                    <th rowspan="4" class="cl_Metalloid" onmouseover="mygroup('Metalloid')"><div class="rotate"><div><a>Metalloid</a></div></div></th>
+                                    <th colspan="3" onmouseover="mygroup('Non-metal')"><a>NonMetal</a></th>
                                 <tr>
                                 <tr>
-                                    <td rowspan="2" class="cl_AlkaliMetal"><div class="rotate"><div><a onmouseover="mygroup('Alkali Metal')">AlkaliMetal</a></div></div></td>
-                                    <td rowspan="2" class="cl_AlkalineEarthMetal"><div class="rotate"><div><a onmouseover="mygroup('Alkaline Earth Metal')">AlkalineEarthMetal</a></div></div></td>
-                                    <td class="cl_Lanthanide"><a onmouseover="mygroup('Lanthanide')">Lanthanide</a></td>
-                                    <td rowspan="2" class="cl_TransitionMetal"><div class="rotate"><div><a onmouseover="mygroup('Transition Metal')">TransitionMetal</a></div></div></td>
-                                    <td rowspan="2" class="cl_PostTransitionMetal"><div class="rotate"><div><a onmouseover="mygroup('Post-transition metals')">PostTransitionMetal</a></div></div></td>
-                                    <td rowspan="2" class="cl_Nonmetal"><div class="rotate"><div><a onmouseover="mygroup('Nonmetal')">Nonmetal</a></div></div></td>
-                                    <td rowspan="2" class="cl_Nonmetal"><div class="rotate"><div><a onmouseover="mygroup('Halogen')">Halogen</a></div></div></td>
-                                    <td rowspan="2" class="cl_NobleGas"><div class="rotate"><div><a onmouseover="mygroup('Noble Gas')">NobleGas</a></div></div></td>
+                                    <td rowspan="2" class="cl_AlkaliMetal" onmouseover="mygroup('Alkali Metal')"><div class="rotate"><div><a>AlkaliMetal</a></div></div></td>
+                                    <td rowspan="2" class="cl_AlkalineEarthMetal" onmouseover="mygroup('Alkaline Earth Metal')"><div class="rotate"><div><a>AlkalineEarthMetal</a></div></div></td>
+                                    <td class="cl_Lanthanide" onmouseover="mygroup('Lanthanide')"><a>Lanthanide</a></td>
+                                    <td rowspan="2" class="cl_TransitionMetal" onmouseover="mygroup('Transition Metal')"><div class="rotate"><div><a>TransitionMetal</a></div></div></td>
+                                    <td rowspan="2" class="cl_PostTransitionMetal" onmouseover="mygroup('Post-transition metals')"><div class="rotate"><div><a>PostTransitionMetal</a></div></div></td>
+                                    <td rowspan="2" class="cl_Nonmetal" onmouseover="mygroup('Nonmetal')"><div class="rotate"><div><a>Nonmetal</a></div></div></td>
+                                    <td rowspan="2" class="cl_Nonmetal" onmouseover="mygroup('Halogen')"><div class="rotate"><div><a>Halogen</a></div></div></td>
+                                    <td rowspan="2" class="cl_NobleGas" onmouseover="mygroup('Noble Gas')"><div class="rotate"><div><a>NobleGas</a></div></div></td>
                                 </tr>
                                 <tr>
-                                    <td class="cl_Actinide"><a onmouseover="mygroup('Actinide')">Actinide</a></td>
+                                    <td class="cl_Actinide" onmouseover="mygroup('Actinide')"><a>Actinide</a></td>
                                 </tr>
                             </table></center>`
                 }
