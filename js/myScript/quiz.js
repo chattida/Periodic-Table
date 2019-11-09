@@ -1,5 +1,7 @@
 let requestURL = ''
 let json_obj
+let qarea = document.getElementById("question")
+let clickgame = 0;
 
 if (getCookie("lang") == "th") {
     requestURL = '../../data/elements_th.json'
@@ -20,72 +22,90 @@ request.send()
 
 function generateQuiz(obj) {
     json_obj = obj
-    let qArr = []
+    let qArr = [],
+        groupCheck = []
     let qSet = new Set()
     for (i = 0; i < 5; i++) {
-        while (qSet.size < 4) qSet.add(json_obj[Math.floor(Math.random() * json_obj.length)]);
+        while (qSet.size < 4) {
+            let adder = json_obj[Math.floor(Math.random() * json_obj.length)]
+            if (groupCheck.includes(adder.Group) === false) {
+                if ((parseInt(adder.Period) === 6 && parseInt(adder.Group) === 3) === false) {
+                    if ((parseInt(adder.Period) === 7 && parseInt(adder.Group) === 3) === false) qSet.add(adder);
+                }
+            }
+
+            groupCheck.push(adder.Group)
+        }
         let array = Array.from(qSet);
         qArr.push(array)
         qSet.clear()
+        groupCheck = []
     }
     return qArr
 }
 
 function displayQuiz(obj) {
     json_obj = obj
-    let score = 0, correct = [], states = ["ของแข็ง", "ของเหลว", "แก็ส", "ไม่ทราบ"]
-    let presetQ = [0, 1, 2, 3, 4]
+    let score = 0,
+        txt = '',
+        correct = [],
+        ansArray = [],
+        presetQ = [0, 1, 2, 3, 4]
+    // let width = 100, id = setInterval(frame, 75)
+    // function frame() {
+    //     if (width <= 0) {
+    //       clearInterval(id);
+    //       document.getElementById("start").innerHTML = "Continue";
+    //     }
+    //     else if (clickgame != 0) {
+    //       clearInterval(id);
+    //       boxc1.style.display = "none";
+    //       boxc2.style.display = "none";
+    //       document.getElementById("start").innerHTML = "Continue";
+    //     }
+    //     else {
+    //       width--;
+    //       elem.style.width = width + '%';
+    //     }
+    //   }
+
+
     for (i = 0; i < 5; i++) {
         correct = (json_obj[i][Math.floor(Math.random() * json_obj[i].length)])
         switch (presetQ.splice(Math.floor(Math.random() * presetQ.length), 1)[0]) {
             case 0:
                 //ชื่อเต็มของธาตุน้คืออะไร
                 quizDialog = "ชื่อเต็มของธาตุ " + correct.Symbol + " คืออะไร"
-                console.log(quizDialog)
-                for (j in json_obj[i]){
-                    console.log(json_obj[i][j].Element)
-                }
-                console.log(correct)
+                for (j in json_obj[i]) ansArray.push(json_obj[i][j].Element);
                 break
             case 1:
                 //ชื่อย่อของธาตุน้คืออะไร
-                quizDialog = "ชื่อย่อของธาตุ " + correct.Element + " คืออะไร"
-                console.log(quizDialog)
-                for (j in json_obj[i]){
-                    console.log(json_obj[i][j].Symbol)
-                }
-                console.log(correct)
+                quizDialog = "ชื่อย่อของ " + correct.Element + " คืออะไร"
+                for (j in json_obj[i]) ansArray.push(json_obj[i][j].Symbol);
                 break
             case 2:
                 //ธาตุอยู่หมุ่อะไร
-                quizDialog = "ธาตุ " + correct.Element + " อยู่หมุ่อะไร"
-                console.log(quizDialog)
-                for (j in json_obj[i]){
-                    console.log(json_obj[i][j].Element)
-                }
-                console.log(correct)
+                quizDialog = correct.Element + " อยู่หมู่อะไร"
+                for (j in json_obj[i]) ansArray.push(json_obj[i][j].Group);
                 break
             case 3:
                 //เลขอะตอมธาตุน้คืออะไร
                 quizDialog = "เลขอะตอมของธาตุ " + correct.Element + " คืออะไร"
-                console.log(quizDialog)
-                for (j in json_obj[i]){
-                    console.log(json_obj[i][j].Element)
-                }
-                console.log(correct)
+                for (j in json_obj[i]) ansArray.push(json_obj[i][j].AtomicNumber);
                 break
             case 4:
                 //ธาตุนีทีสถานะอะไร
-                quizDialog = "ธาตุ " + correct.Element + " นีทีสถานะอะไร"
-                console.log(quizDialog)
-                for (j in states){
-                    console.log(states[j])
-                }
-                console.log(correct)
+                quizDialog = correct.Element + " มีสถานะอะไร"
+                ansArray = ["ของแข็ง", "ของเหลว", "แก็ส", "ไม่ทราบ"]
                 break
         }
+        console.log(quizDialog, ansArray, correct)
+
+
+
+
+        ansArray = []
     }
-    // console.log(correct)
 }
 
 // get cookie function

@@ -225,12 +225,30 @@ bigMass {
     white-space: nowrap;
     width: 15px;
 }
+
 .rotate div {
-      transform: translate(0px, 120px) rotate(-90deg);
+    transform: translate(0px, 120px) rotate(-90deg);
 }
+
 th .rotate div {
     transform: translate(0px, 80px) rotate(-90deg);
 }
+
 .rotate div a {
     padding: 0;
+}
+
+#startbox {
+    color: white;
+    background-color: black;
+    width: 25vh;
+    font-size: 3.5vmax;
+    position: relative;
+    display: block;
+}
+
+#startbox:hover {
+    color: black;
+    background-color: white;
+    transition: color 1s, background-color 1s;
 }
