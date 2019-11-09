@@ -167,12 +167,12 @@ bigMass {
 }
 
 .myType th {
-    border: 4px solid black;
+    border: 3px solid black;
 }
 
 .myType td {
     padding: 7px;
-    border: 2px solid black;
+    border: 2px solid white;
 }
 
 .datalink {
