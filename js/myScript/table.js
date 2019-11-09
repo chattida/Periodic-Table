@@ -69,74 +69,67 @@ function showTable(obj) {
                 </td>`
             } else if (i == 1 && j == 4) {
                 // boxArea-2
-                txt += `<td colspan="7" rowspan="3" class="text-center" id="boxArea-2">boxArea-2</td>`
+                txt += `<td colspan="7" rowspan="3" id="boxArea-2">`
+                if (getCookie("lang") == "th") {
+                    txt += `<center><table class="myType text-center">
+                                <tr>
+                                    <th colspan="5" onmouseover="mygroup('Metal')"><a>โลหะ</a></th>
+                                    <th rowspan="4" class="cl_Metalloid" onmouseover="mygroup('Metalloid')"><div class="rotate"><div><a>กึ่งโลหะ</a></div></div></th>
+                                    <th colspan="2" onmouseover="mygroup('Non-metal')"><a>อโลหะ</a></th>
+                                <tr>
+                                <tr>
+                                    <td rowspan="2" class="cl_AlkaliMetal" onmouseover="mygroup('โลหะอัลคาไล')"><div class="rotate"><div><a>โลหะอัลคาไล</a></div></div></td>
+                                    <td rowspan="2" class="cl_AlkalineEarthMetal" onmouseover="mygroup('โลหะอัลคาไลน์เอิร์ธ')"><div class="rotate"><div><a>โลหะอัลคาไลน์เอิร์ธ</a></div></div></td>
+                                    <td class="cl_Lanthanide" onmouseover="mygroup('แลนทาไนด์')"><a>แลนทาไนด์</a></td>
+                                    <td rowspan="2" class="cl_TransitionMetal" onmouseover="mygroup('โลหะทรานซิชัน')"><div class="rotate"><div><a>โลหะทรานซิชัน</a></div></div></td>
+                                    <td rowspan="2" class="cl_PostTransitionMetal" onmouseover="mygroup('โลหะหลังทรานซิชัน')"><div class="rotate"><div><a>โลหะหลังทรานซิชัน</a></div></div></td>
+                                    <td rowspan="2" class="cl_Nonmetal" onmouseover="mygroup('อโลหะ')"><div class="rotate"><div><a>อโลหะ</a></div></div></td>
+                                    <td rowspan="2" class="cl_NobleGas" onmouseover="mygroup('ก๊าซเฉี่อย')"><div class="rotate"><div><a>ก๊าซเฉี่อย</a></div></div></td>
+                                </tr>
+                                <tr>
+                                    <td class="cl_Actinide" onmouseover="mygroup('แอกทิไนด์')"><a>แอกทิไนด์</a></td>
+                                </tr>
+                            </table></center>`
+                } else if (getCookie("lang") == "en") {
+                    txt += `<center><table class="myType text-center">
+                                <tr>
+                                    <th colspan="5" onmouseover="mygroup('Metal')"><a>Metal</a></th>
+                                    <th rowspan="4" class="cl_Metalloid" onmouseover="mygroup('Metalloid')"><div class="rotate"><div><a>Metalloid</a></div></div></th>
+                                    <th colspan="3" onmouseover="mygroup('Non-metal')"><a>NonMetal</a></th>
+                                <tr>
+                                <tr>
+                                    <td rowspan="2" class="cl_AlkaliMetal" onmouseover="mygroup('Alkali Metal')"><div class="rotate"><div><a>AlkaliMetal</a></div></div></td>
+                                    <td rowspan="2" class="cl_AlkalineEarthMetal" onmouseover="mygroup('Alkaline Earth Metal')"><div class="rotate"><div><a>AlkalineEarthMetal</a></div></div></td>
+                                    <td class="cl_Lanthanide" onmouseover="mygroup('Lanthanide')"><a>Lanthanide</a></td>
+                                    <td rowspan="2" class="cl_TransitionMetal" onmouseover="mygroup('Transition Metal')"><div class="rotate"><div><a>TransitionMetal</a></div></div></td>
+                                    <td rowspan="2" class="cl_PostTransitionMetal" onmouseover="mygroup('Post-transition metals')"><div class="rotate"><div><a>PostTransitionMetal</a></div></div></td>
+                                    <td rowspan="2" class="cl_Nonmetal" onmouseover="mygroup('Nonmetal')"><div class="rotate"><div><a>Nonmetal</a></div></div></td>
+                                    <td rowspan="2" class="cl_Nonmetal" onmouseover="mygroup('Halogen')"><div class="rotate"><div><a>Halogen</a></div></div></td>
+                                    <td rowspan="2" class="cl_NobleGas" onmouseover="mygroup('Noble Gas')"><div class="rotate"><div><a>NobleGas</a></div></div></td>
+                                </tr>
+                                <tr>
+                                    <td class="cl_Actinide" onmouseover="mygroup('Actinide')"><a>Actinide</a></td>
+                                </tr>
+                            </table></center>`
+                }
+                txt += `</td>`
             } else if (i == 1 && j == 5) {
                 // boxArea-3
-                txt += `<td colspan="5" rowspan="1" class="text-left" id="pt-phase">`
+                txt += `<td colspan="5" rowspan="1" class="text-center" id="pt-phase">`
                 if (getCookie("lang") == "th") {
                     txt += `สถานะ : 
                     <a onmouseover="mygroup('ของแข็ง')" class="btn btn-light" alt="ของแข็ง" title="ของแข็ง"><i class="fas fa-cubes"></i></a>
                     <a onmouseover="mygroup('ของเหลว')" class="btn btn-light" alt="ของเหลว" title="ของเหลว"><i class="fas fa-tint"></i></a>
                     <a onmouseover="mygroup('ก๊าซ')" class="btn btn-light" alt="ก๊าซ" title="ก๊าซ"><i class="fas fa-wind"></i></a>
                     <a onmouseover="mygroup('Unknown')" class="btn btn-light" alt="ไม่ทราบ" title="ไม่ทราบ"><i class="fas fa-question-circle"></i></a><br>
-                    ประเภท : 
-                    <div class="dropdown show d-inline">
-                        <a onmouseover="mygroup('Metal')" class="btn btn-light" alt="โลหะ" title="โลหะ" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            โลหะ
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a onmouseover="mygroup('โลหะอัลคาไล')" class="dropdown-item">โลหะอัลคาไล</a>
-                            <a onmouseover="mygroup('โลหะอัลคาไลน์เอิร์ธ')" class="dropdown-item">โลหะอัลคาไลน์เอิร์ธ</a>
-                            <a onmouseover="mygroup('แลนทาไนด์')" class="dropdown-item">แลนทาไนด์</a>
-                            <a onmouseover="mygroup('แอกทิไนด์')" class="dropdown-item">แอกทิไนด์</a>
-                            <a onmouseover="mygroup('โลหะทรานซิชัน')" class="dropdown-item">โลหะทรานซิชัน</a>
-                            <a onmouseover="mygroup('โลหะหลังทรานซิชัน')" class="dropdown-item">โลหะหลังทรานซิชัน</a>
-                        </div>
-                    </div>
-                    <a onmouseover="mygroup('Metalloid')" class="btn btn-light d-inline">กึ่งโลหะ</a>
-                    <div class="dropdown show d-inline">
-                        <a onmouseover="mygroup('Non-metal')" class="btn btn-light" alt="อโลหะ" title="อโลหะ" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            อโลหะ
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a onmouseover="mygroup('อโลหะ')" class="dropdown-item">อโลหะ</a>
-                            <a onmouseover="mygroup('ก๊าซเฉี่อย')" class="dropdown-item">ก๊าซเฉี่อย</a>
-                        </div>
-                    </div>
                     `
                 } else if (getCookie("lang") == "en") {
-                    txt += `
-                    Phase : 
-                            <a onmouseover="mygroup('solid')" class="btn btn-light" alt="Solid" title="Solid"><i class="fas fa-cubes"></i></a>
-                            <a onmouseover="mygroup('liquid')" class="btn btn-light" alt="Liquid" title="Liquid"><i class="fas fa-tint"></i></a>
-                            <a onmouseover="mygroup('gas')" class="btn btn-light" alt="Gas" title="Gas"><i class="fas fa-wind"></i></a>
-                            <a onmouseover="mygroup('Unknown')" class="btn btn-light" alt="Unknown" title="Unknown"><i class="fas fa-question-circle"></i></a><br>
-                            Type : 
-                            <div class="dropdown show d-inline">
-                                <a onmouseover="mygroup('Metal')" class="btn btn-light" alt="Metal" title="Metal" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Metal
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a onmouseover="mygroup('Alkali Metal')" class="dropdown-item">AlkaliMetal</a>
-                                    <a onmouseover="mygroup('Alkaline Earth Metal')" class="dropdown-item">Alkaline Earth Metal</a>
-                                    <a onmouseover="mygroup('Lanthanide')" class="dropdown-item">Lanthanide</a>
-                                    <a onmouseover="mygroup('Actinide')" class="dropdown-item">Actinide</a>
-                                    <a onmouseover="mygroup('Transition Metal')" class="dropdown-item">Transition Metal</a>
-                                    <a onmouseover="mygroup('Post-transition metals')" class="dropdown-item">Post Transition Metal</a>
-                                </div>
-                            </div>
-                            <a onmouseover="mygroup('Metalloid')" class="btn btn-light d-inline">Metalloid</a>
-                            <div class="dropdown show d-inline">
-                                <a onmouseover="mygroup('Non-metal')" class="btn btn-light" alt="Nonmetal" title="Nonmetal" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Nonmetal
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a onmouseover="mygroup('Nonmetal')" class="dropdown-item">Nonmetal</a>
-                                    <a onmouseover="mygroup('Halogen')" class="dropdown-item">Halogen</a>
-                                    <a onmouseover="mygroup('Noble Gas')" class="dropdown-item">NobleGas</a>
-                                </div>
-                            </div>
-                            `
+                    txt += `Phase : 
+                    <a onmouseover="mygroup('solid')" class="btn btn-light" alt="Solid" title="Solid"><i class="fas fa-cubes"></i></a>
+                    <a onmouseover="mygroup('liquid')" class="btn btn-light" alt="Liquid" title="Liquid"><i class="fas fa-tint"></i></a>
+                    <a onmouseover="mygroup('gas')" class="btn btn-light" alt="Gas" title="Gas"><i class="fas fa-wind"></i></a>
+                    <a onmouseover="mygroup('Unknown')" class="btn btn-light" alt="Unknown" title="Unknown"><i class="fas fa-question-circle"></i></a><br>
+                    `
                 }
                 txt += `</td>`
             } else if (i == 1 && (j > 5 && j < 18)) {
@@ -260,7 +253,7 @@ function colorTable(type) {
     else if(type == "โลหะอัลคาไลน์เอิร์ธ" || type == "Alkaline Earth Metal") return `cl_AlkalineEarthMetal`;
     else if(type == "กึ่งโลหะ" || type == "Metalloid") return `cl_Metalloid`;
     else if(type == "ก๊าซเฉี่อย" || type == "Noble Gas") return `cl_NobleGas`;
-    else if(type == "โลหะหลังทรานซิชัน" || type == "Post-transition metals") return `cl_PostMetal`;
+    else if(type == "โลหะหลังทรานซิชัน" || type == "Post-transition metals") return `cl_PostTransitionMetal`;
     else if(type == "โลหะทรานซิชัน" || type == "Transition Metal") return `cl_TransitionMetal`;
     else if(type == "แลนทาไนด์" || type == "Lanthanide") return `cl_Lanthanide`;
     else if(type == "แอกทิไนด์" || type == "Actinide") return `cl_Actinide`;

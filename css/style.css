@@ -125,32 +125,54 @@ bigMass {
 .cl_Nonmetal {
     background: #a1aedb;
 }
+
 .cl_AlkaliMetal {
     background: #f8a891;
 }
+
 .cl_AlkalineEarthMetal {
     background: #f9c98e;
 }
+
 .cl_Metalloid {
     background: #a4d1d3;
 }
+
 .cl_NobleGas {
     background: #c99cc9;
 }
-.cl_PostMetal {
+
+.cl_PostTransitionMetal {
     background: #9fbf91;
 }
+
 .cl_TransitionMetal {
     background: #f2f190;
 }
+
 .cl_Lanthanide {
     background: #eb9cc1;
 }
+
 .cl_Actinide {
     background: #f0c6e2;
 }
+
 .cl_artificial {
     background: #e5e5e5;
+}
+
+.myType {
+    border: 2px solid black;
+}
+
+.myType th {
+    border: 3px solid black;
+}
+
+.myType td {
+    padding: 7px;
+    border: 2px solid white;
 }
 
 .datalink {
@@ -196,4 +218,37 @@ bigMass {
 
 .social {
     color: black;
+}
+
+.rotate {
+    height: 140px;
+    white-space: nowrap;
+    width: 15px;
+}
+
+.rotate div {
+    transform: translate(0px, 120px) rotate(-90deg);
+}
+
+th .rotate div {
+    transform: translate(0px, 80px) rotate(-90deg);
+}
+
+.rotate div a {
+    padding: 0;
+}
+
+#startbox {
+    color: white;
+    background-color: black;
+    width: 25vh;
+    font-size: 3.5vmax;
+    position: relative;
+    display: block;
+}
+
+#startbox:hover {
+    color: black;
+    background-color: white;
+    transition: color 1s, background-color 1s;
 }
