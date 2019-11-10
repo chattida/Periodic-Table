@@ -135,6 +135,7 @@ function move() {
                 qbox3.style.display = "none"
                 qbox4.style.display = "none"
                 qTitle.style.display = "none"
+                qTitle.innerHTML = "หมดเวลา คำตอบที่ถูกต้องคือ " + list[1][list[3]]
                 gameCounter++
                 sbox.innerHTML = "ข้อถัดไป"
 
