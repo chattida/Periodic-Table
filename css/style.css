@@ -414,3 +414,10 @@ th .rotate div {
     width: 27vw;
     height: 80vh;
 }
+
+.disable-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
