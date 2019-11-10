@@ -239,29 +239,23 @@ th .rotate div {
 }
 
 #startbox {
-    top: 35vh;
     text-align: center;
     color: white;
     background-color: black;
-    width: 30vh;
-    font-size: 3.5vmax;
-    position: absolute;
+    font-size: 2em;
     display: block;
 }
 
 #startbox:hover {
     color: black;
-    background-color: lime;
+    background-color: #69d422;
     transition: color 1s, background-color 1s;
 }
 
 #ansbox1 {
-    top: 30vh;
     color: #F8A891;
     background-color: #505050;
-    width: 75vh;
-    font-size: 3.5vmax;
-    position: absolute;
+    font-size: 3em;
     display: none;
     text-align: center;
 }
@@ -273,12 +267,9 @@ th .rotate div {
 }
 
 #ansbox2 {
-    top: 40vh;
     color: #F2F190;
     background-color: #505050;
-    width: 75vh;
-    font-size: 3.5vmax;
-    position: absolute;
+    font-size: 3em;
     display: none;
     text-align: center;
 }
@@ -290,12 +281,9 @@ th .rotate div {
 }
 
 #ansbox3 {
-    top: 50vh;
     color: #9FBF91;
     background-color: #505050;
-    width: 75vh;
-    font-size: 3.5vmax;
-    position: absolute;
+    font-size: 3em;
     display: none;
     text-align: center;
 }
@@ -307,12 +295,9 @@ th .rotate div {
 }
 
 #ansbox4 {
-    top: 60vh;
     color: #5B8EDB;
     background-color: #505050;
-    width: 75vh;
-    font-size: 3.5vmax;
-    position: absolute;
+    font-size: 3em;
     display: none;
     text-align: center;
 }
@@ -324,30 +309,17 @@ th .rotate div {
 }
 
 #myProgress {
-    position: relative;
-    width: 100vw;
     background-color: white;
-    left: 50%;
-    top: 25.5px;
-    transform: translatex(-50%);
 }
 
 #myBar {
     position: relative;
-    width: 100vw;
-    height: 1vh;
-    background-color: #505050;
+    height: 1.3vh;
+    background-color: #66b82f;
+    border: 1px solid rgba(0, 0, 0, 0.3);
     left: 50%;
     transform: translatex(-50%);
     display: none;
-}
-
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
 }
 
 .mediaTime {

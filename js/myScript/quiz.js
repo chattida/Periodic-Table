@@ -65,31 +65,31 @@ function displayQuiz(obj) {
     switch (presetQ.splice(Math.floor(Math.random() * presetQ.length), 1)[0]) {
         case 0:
             //ชื่อเต็มของธาตุน้คืออะไร
-            quizDialog[0] = "ชื่อเต็มของธาตุ " + correct.Symbol + " คืออะไร"
+            quizDialog[0] = "ชื่อเต็มของธาตุ " + correct.Symbol + " คืออะไร?"
             quizDialog[1] = 0
             for (j in json_obj[gameCounter]) ansArray.push(json_obj[gameCounter][j].Element);
             break
         case 1:
             //ชื่อย่อของธาตุน้คืออะไร
-            quizDialog[0] = "ชื่อย่อของ " + correct.Element + " คืออะไร"
+            quizDialog[0] = "ชื่อย่อของ " + correct.Element + " คืออะไร?"
             quizDialog[1] = 1
             for (j in json_obj[gameCounter]) ansArray.push(json_obj[gameCounter][j].Symbol);
             break
         case 2:
             //ธาตุอยู่หมุ่อะไร
-            quizDialog[0] = correct.Element + " อยู่หมู่อะไร"
+            quizDialog[0] = correct.Element + " อยู่หมู่อะไร?"
             quizDialog[1] = 2
             for (j in json_obj[gameCounter]) ansArray.push(json_obj[gameCounter][j].Group);
             break
         case 3:
             //เลขอะตอมธาตุน้คืออะไร
-            quizDialog[0] = "เลขอะตอมของธาตุ " + correct.Element + " คืออะไร"
+            quizDialog[0] = "เลขอะตอมของธาตุ " + correct.Element + " คืออะไร?"
             quizDialog[1] = 3
             for (j in json_obj[gameCounter]) ansArray.push(json_obj[gameCounter][j].AtomicNumber);
             break
         case 4:
             //ธาตุนีทีสถานะอะไร
-            quizDialog[0] = correct.Element + " มีสถานะอะไร"
+            quizDialog[0] = correct.Element + " มีสถานะอะไร?"
             quizDialog[1] = 4
             ansArray = ["ของแข็ง", "ของเหลว", "ก๊าซ", "ของเทียม"]
             for (j = 0; j < 4; j++) if (ansArray[j].localeCompare(json_obj[gameCounter][j].State)) {
@@ -118,12 +118,13 @@ function move() {
         let width = 100;
         var id = setInterval(frame, 150);
         displayQuiz(rest)
-        elem.style.backgroundColor = "#505050"
         qbox1.style.display = "block"
         qbox2.style.display = "block"
         qbox3.style.display = "block"
         qbox4.style.display = "block"
         elem.style.display = "block"
+        elem.style.width = width + '%'
+        sbox.style.display = "none"
         sbox.innerHTML = ""
         clickGame = 0
 
@@ -134,22 +135,24 @@ function move() {
                 qbox2.style.display = "none"
                 qbox3.style.display = "none"
                 qbox4.style.display = "none"
-                qTitle.style.display = "none"
-                qTitle.innerHTML = "หมดเวลา คำตอบที่ถูกต้องคือ " + list[1][list[3]]
+                elem.style.display = "none"
+                qTitle.style.display = "block"
+                qTitle.innerHTML = "หมดเวลา! คำตอบที่ถูกต้องคือ " + list[1][list[3]]
                 gameCounter++
+                sbox.style.display = "block"
                 sbox.innerHTML = "ข้อถัดไป"
-
             } else if (clickGame != 0) {
                 clearInterval(id);
                 qbox1.style.display = "none"
                 qbox2.style.display = "none"
                 qbox3.style.display = "none"
                 qbox4.style.display = "none"
+                elem.style.display = "none"
                 gameCounter++
+                sbox.style.display = "block"
                 sbox.innerHTML = "ข้อถัดไป"
-
             } else if (width < 51) {
-                elem.style.backgroundColor = "red"
+                elem.style.backgroundColor = "#b82f2f"
                 width--
                 elem.style.width = width + '%'
 
@@ -169,10 +172,10 @@ function move() {
 
 function clickChoice(ans) {
     if (ans === list[3]) {
-        qTitle.innerHTML = "ถูกต้อง"
+        qTitle.innerHTML = "ถูกต้อง!"
         winCounter++
     } else {
-        qTitle.innerHTML = "ผิด คำตอบที่ถูกต้องคือ " + list[1][list[3]]
+        qTitle.innerHTML = "ผิด! คำตอบที่ถูกต้องคือ " + list[1][list[3]]
     }
     clickGame++;
 }
