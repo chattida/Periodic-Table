@@ -136,7 +136,7 @@ function move() {
                 qbox4.style.display = "none"
                 qTitle.style.display = "none"
                 gameCounter++
-                sbox.innerHTML = "Continue"
+                sbox.innerHTML = "ข้อถัดไป"
 
             } else if (clickGame != 0) {
                 clearInterval(id);
@@ -145,7 +145,7 @@ function move() {
                 qbox3.style.display = "none"
                 qbox4.style.display = "none"
                 gameCounter++
-                sbox.innerHTML = "Continue"
+                sbox.innerHTML = "ข้อถัดไป"
 
             } else if (width < 51) {
                 elem.style.backgroundColor = "red"
@@ -171,7 +171,7 @@ function clickChoice(ans) {
         qTitle.innerHTML = "ถูกต้อง"
         winCounter++
     } else {
-        qTitle.innerHTML = "ผิด คำตอบคือที่ถูกต้องคือ " + list[1][list[3]]
+        qTitle.innerHTML = "ผิด คำตอบที่ถูกต้องคือ " + list[1][list[3]]
     }
     clickGame++;
 }
