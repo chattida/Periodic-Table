@@ -289,3 +289,23 @@ th .rotate div {
 .mediaBox:hover {
     text-decoration: none;
 }
+
+.topic{
+    background: #FFC344;
+    width: 60%;
+}
+
+.history{
+    background:#C4F5FC;
+    border-radius: 4%;
+}
+
+.benefit {
+    background:#FEE5FC;
+    border-radius: 4%;
+}
+
+.dataimages{
+    width: 27vw;
+    height: 80vh;
+}

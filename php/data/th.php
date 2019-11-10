@@ -1,6 +1,10 @@
 <?php
+    // json-1
     $json_file = file_get_contents('./data/elements_th.json');
     $json_data = json_decode($json_file, true);
+    // json-2
+    $json_file1 = file_get_contents('./data/data_th.json');
+    $json_data1 = json_decode($json_file1, true);
     $id = (int) $_GET['id'] - 1;
     $id_ = $id + 1;
     if ($id_ > 118 || $id_ < 1) {
@@ -88,16 +92,103 @@
     </nav>
 
     <!-- content -->
-    <div class="container-fluid">
-        <div class="text-center my-4 mx-2">
-    <?php
-        echo("
-            <h1>{$json_data[$id]['Element']} ({$json_data[$id]['Symbol']})</h1>
-            <h4>เลขอะตอม: {$json_data[$id]['AtomicNumber']}</h4>
-            <h5>หมู่: {$json_data[$id]['Group']} | คาบ: {$json_data[$id]['Period']}</h5>
-            <h5>มวลอะตอม: {$json_data[$id]['AtomicMass']}</h5>
-        ");
-    ?>
+    <div class="container">
+        <div class="text-center p-3 my-5 mx-auto topic"><h3><?php echo("{$json_data[$id]['Element']}")?></h3></div>
+        <div class="row">
+            <div class="col-4 text-center ml-auto">
+                <img class="dataimages" src="assets/element/e<?php
+                    $picname = '' . $id_;
+                    if (strlen($picname) == 1) {
+                        $picname = '00' . $id_;
+                    } else if (strlen($picname) == 2) {
+                        $picname = '0' . $id_;
+                    } else if (strlen($picname) == 3) {
+                        $picname = $id_;
+                    }
+                    echo("{$picname}");
+                ?>.png" alt="<?php echo("{$json_data[$id]['Element']}")?>">
+            </div>
+            <div class="col-4 mr-auto">
+                    <table class="table table-bordered mr-auto">
+                        <tr>
+                            <td>เลขอะตอม</td>
+                            <td class="text-center"><?php echo("{$json_data[$id]['AtomicNumber']}")?></td>
+                        </tr>
+                        <tr>
+                            <td>ธาตุ</td>
+                            <td class="text-center"><?php echo("{$json_data[$id]['Element']}")?></td>
+                        </tr>
+                        <tr>
+                            <td>สัญลักษณ์</td>
+                            <td class="text-center"><?php echo("{$json_data[$id]['Symbol']}")?></td>
+                        </tr>
+                        <tr>
+                            <td>จำนวนนิวตรอน</td>
+                            <td class="text-center"><?php echo("{$json_data[$id]['NumberofNeutrons']}")?></td>
+                        </tr>
+                        <tr>
+                            <td>จำนวนโปรตรอน</td>
+                            <td class="text-center"><?php echo("{$json_data[$id]['NumberofProtons']}")?></td>
+                        </tr>
+                        <tr>
+                            <td>จำนวนอิเล็กตรอน</td>
+                            <td class="text-center"><?php echo("{$json_data[$id]['NumberofElectrons']}")?></td>
+                        </tr>
+                        <tr>
+                            <td>สถานะ</td>
+                            <td class="text-center"><?php echo("{$json_data[$id]['Phase']}")?></td>
+                        </tr>
+                        <tr>
+                            <td>ชนิด</td>
+                            <td class="text-center"><?php echo("{$json_data[$id]['Type']}")?></td>
+                        </tr>
+                        <tr>
+                            <td>ค้นพบโดย</td>
+                            <td class="text-center"><?php echo("{$json_data[$id]['Discoverer']}")?></td>
+                        </tr>
+                        <tr>
+                            <td>ปีที่ค้นพบ</td>
+                            <td class="text-center"><?php echo("{$json_data[$id]['Year']}")?></td>
+                        </tr>
+                        
+                    </table>
+            </div>
+        </div>
+        <div class="my-5 mx-auto" style="width:70%;">
+            <?php
+                foreach($json_data1[$id]['Description'] as $data) {
+                    echo("<p>&emsp;&emsp;&emsp;&emsp;{$data}</p>");
+                }
+            ?>
+        </div>
+        <div class="row my-5">
+            <div class="col-5 p-3 mx-auto history">
+            <?php
+                echo("<b>ประวัติการค้นพบ</b>");
+                foreach($json_data1[$id]['Discovery'] as $data) {
+                    echo("<p>&emsp;&emsp;&emsp;&emsp;{$data}</p>");
+                }
+            ?>
+            </div>
+            <div class="col-5 p-3 mx-auto benefit">
+            <?php
+                echo("<b>ประโยชน์</b>");
+                $i = 1;
+                try {
+                    foreach($json_data1[$id]['Benefit_extra'] as $data) {
+                        if ($data != "") {
+                            echo("<p>&emsp;&emsp;{$data}</p>");
+                        }
+                    }
+                } catch (Exception $e){
+                    } 
+                foreach($json_data1[$id]['Benefit'] as $data) {
+                    echo("<p>&emsp;&emsp;- {$data}</p>");
+                    $i++;
+                }
+                echo("</div>");
+            ?>
+            </div>
         </div>
         <!-- footer -->
         <hr>
@@ -110,7 +201,6 @@
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/fontawesome.min.js"></script>
     <script src="../js/solid.min.js"></script>
-    <script src="../js/myScript/table.js"></script>
 </body>
 
 </html>
