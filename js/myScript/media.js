@@ -20,7 +20,7 @@ request.onreadystatechange = function () {
 function showList(obj) {
     let txt = ''
     for (let i = 0; i < obj.length; i++) {
-        txt += `<div class="col-lg-4 mx-auto my-3">
+        txt += `<div class="col-lg-4 col-md-6 mx-auto my-3">
         <a href="${obj[i].link}" class="mediaBox">
         <div class="card">
             <i class="far fa-play-circle text-light playBtn"></i>

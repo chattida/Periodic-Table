@@ -38,7 +38,7 @@ function showList(obj) {
         txt += `<div class="row">`
         Object.keys(check).forEach((key, index) => {
             if (check[key].length > 0) {
-                txt += `<div class="col-lg-4 my-3">`
+                txt += `<div class="col-lg-4 col-md-6 my-3">`
                 txt += `<h3 class="ml-3"><i class="fas fa-caret-right"></i> ${key}</h3>`
             }
             for (let j = 0; j < check[key].length; j++) {
@@ -57,7 +57,7 @@ function showList(obj) {
         txt += `<div class="row">`
         Object.keys(check).forEach((key, index) => {
             if (check[key].length > 0) {
-                txt += `<div class="col-lg-4 my-3">`
+                txt += `<div class="col-lg-4 col-md-6 my-3">`
                 txt += `<h3 class="ml-3"><i class="fas fa-caret-right"></i> ${key}</h3>`
             }
             for (let j = 0; j < check[key].length; j++) {

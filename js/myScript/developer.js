@@ -15,7 +15,7 @@ function showMember(obj) {
     let txt = ''
     if (getCookie("lang") == "th") {
         for (let i = 0; i < obj.length; i++) {
-            txt += `<div class="col-lg-5 mx-auto my-3">
+            txt += `<div class="col-lg-5 col-md-5 mx-auto my-3">
                         <div class="row">
                             <div class="col-lg-4 justify-content-center">
                                 <img class="profile" src="${obj[i].path}" alt="${obj[i].name_th}">
@@ -31,7 +31,7 @@ function showMember(obj) {
                         </div>
                     </div>`
         }
-        txt += `<div class="col-lg-5 mx-auto my-3">
+        txt += `<div class="col-lg-5 col-md-5 mx-auto my-3">
                     <hr class="mt-1 mb-3">
                     <p class="my-0 text-muted idnumber">06016312</p>
                     <h5 class="mb-1 d-inline">Web Technology Project (2019)</h5>
@@ -40,7 +40,7 @@ function showMember(obj) {
                 </div>`
     } else if (getCookie("lang") == "en") {
         for (let i = 0; i < obj.length; i++) {
-            txt += `<div class="col-lg-5 mx-auto my-3">
+            txt += `<div class="col-lg-5 col-md-5 mx-auto my-3">
                         <div class="row">
                             <div class="col-lg-4 justify-content-center">
                                 <img class="profile" src="${obj[i].path}" alt="${obj[i].name_en}">
@@ -56,7 +56,7 @@ function showMember(obj) {
                         </div>
                     </div>`
         }
-        txt += `<div class="col-lg-5 mx-auto my-3">
+        txt += `<div class="col-lg-5 col-md-5 mx-auto my-3">
                     <hr class="mt-1 mb-3">
                     <p class="my-0 text-muted idnumber">06016312</p>
                     <h5 class="mb-1 d-inline">Web Technology Project (2019)</h5>
