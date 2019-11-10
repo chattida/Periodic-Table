@@ -1,14 +1,14 @@
 <?php
     function page_lang() {
         if (check_cookie()) {
-            include("./page/th.html");
+            include("./page/table/th.html");
         } else if ($_COOKIE['lang'] == "th") {
-            include("./page/th.html");
+            include("./page/table/th.html");
         } else if ($_COOKIE['lang'] == "en") {
-            include("./page/en.html");
+            include("./page/table/en.html");
         } else {
             setcookie("lang", "th", time() + (86400 * 30), "/");
-            include("./page/th.html");
+            include("./page/table/th.html");
         }
     }
 
