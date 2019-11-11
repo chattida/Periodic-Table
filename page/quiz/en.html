@@ -81,7 +81,29 @@
     <div class="container">
         <h3 class="my-3">Quiz</h3>
         <hr>
-        <div id="memberList" class="row justify-content-center"></div>
+        <div id="question" class="disable-select">
+            <h2 id="quizTitle" class="text-center">Click the button below to start</h2>
+            <div id="myProgress" class="row justify-content-center">
+                <div class="col-lg-6 my-1">
+                    <div id="myBar"></div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div id="ansbox1" class="col-lg-5 col-md-7 col-sm-8 col-8 my-2" onclick="clickChoice(0)">A</div>
+            </div>
+            <div class="row justify-content-center">
+                <div id="ansbox2" class="col-lg-5 col-md-7 col-sm-8 col-8 my-2" onclick="clickChoice(1)">B</div>
+            </div>
+            <div class="row justify-content-center">
+                <div id="ansbox3" class="col-lg-5 col-md-7 col-sm-8 col-8 my-2" onclick="clickChoice(2)">C</div>
+            </div>
+            <div class="row justify-content-center">
+                <div id="ansbox4" class="col-lg-5 col-md-7 col-sm-8 col-8 my-2" onclick="clickChoice(3)">D</div>
+            </div>
+            <div class="row justify-content-center">
+                <div id="startbox" class="col-lg-3 col-md-4 col-sm-5 col-5 py-3 my-3" onclick="move()">Start</div>
+            </div>
+        </div>
         <!-- footer -->
         <hr>
         <p class="text-center text-dark"><i class="fas fa-flask"></i> Periodic-Table | Web Technology Project (2019)</p>
