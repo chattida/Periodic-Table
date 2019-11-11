@@ -123,7 +123,7 @@
                 ?>.png" alt="<?php echo("{$json_data[$id]['Element']}")?>">
             </div>
             <div class="col-lg-4 col-md-11 col-sm-12 col-12 mx-auto my-3">
-                    <table class="table table-bordered full-table">
+                    <table class="table table-bordered full-table no-wrap">
                         <tr class="table-yellow">
                             <td class="font-weight-bold"><i class="fas fa-angle-right mx-1"></i> เลขอะตอม : </td>
                             <td class="text-center"><?php if ($json_data[$id]['AtomicNumber'] == "") {echo("-");} echo("{$json_data[$id]['AtomicNumber']}")?></td>

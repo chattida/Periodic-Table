@@ -431,3 +431,7 @@ th .rotate div {
 .table-yellow {
     background-color: #fbfcc4;
 }
+
+.no-wrap {
+    white-space: nowrap;
+}
