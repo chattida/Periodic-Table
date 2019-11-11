@@ -283,7 +283,7 @@ th .rotate div {
 #ansbox3 {
     color: #9FBF91;
     background-color: #505050;
-    font-size: 3em;
+    font-size: 0.5em;
     display: none;
     text-align: center;
 }
@@ -369,7 +369,6 @@ th .rotate div {
 
 .topic{
     background: #FFC344;
-    width: 60%;
 }
 
 .history{
@@ -382,9 +381,15 @@ th .rotate div {
     border-radius: 4%;
 }
 
-.dataimages{
-    width: 27vw;
-    height: 80vh;
+.info {
+    background:#e7fee5;
+    border-radius: 4%;
+}
+
+.element-img{
+    height: 100%;
+    padding: 2em;
+    border: 1px solid #dee2e6;
 }
 
 .disable-select {
@@ -392,4 +397,37 @@ th .rotate div {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+.full-table {
+    height: 100%;
+}
+
+.description {
+    font-size: 1.1em;
+}
+
+.hr-black {
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.radius {
+    border-radius: 1%;
+}
+
+.btn-purple {
+    color: rgba(0, 0, 0, 0.9);
+    background-color: #d9c4fc;
+    border-color: #d9c4fc;
+    transition: 0.3s;
+}
+
+.btn-purple:hover {
+    color: white;
+    background-color: #b9a6d8;
+    border-color: #b9a6d8;
+}
+
+.table-yellow {
+    background-color: #fbfcc4;
 }
