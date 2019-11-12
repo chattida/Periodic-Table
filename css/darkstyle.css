@@ -317,7 +317,7 @@ th .rotate div {
 }
 
 #myProgress {
-    background-color: white;
+    background-color: none;
 }
 
 #myBar {
@@ -411,7 +411,7 @@ td {
     color: black;
 }
 
-#pt-phase {
+#pt-phase, .social {
     color: white;
 }
 
