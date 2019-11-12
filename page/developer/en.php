@@ -20,7 +20,7 @@
 
 <body>
     <!-- navbar -->
-    <nav class="navbar <?php if($_COOKIE['darkstatus']) echo "navbar-dark bg-dark"; else echo "navbar-light bg-light";?></nav> navbar-expand-lg pr-2">
+    <nav class="navbar <?php if($_COOKIE['darkstatus']) echo "navbar-dark bg-dark"; else echo "navbar-light bg-light";?> navbar-expand-lg pr-2">
         <a class="navbar-brand" href="index.php">
             <img src="../../assets/logo/logo.png" width="30" height="30" alt="Periodic-Table's logo" class="mr-1">
             Periodic-Table
