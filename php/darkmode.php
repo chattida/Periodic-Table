@@ -8,6 +8,14 @@
 
     // get path
     $link = "../{$_GET['path']}.php";
+    
+    // get id
+    $id = $_GET['id'];
+    
+    // if id had value
+    if (isset($id)) {
+        $link = $link . "?id=" . $id;
+    }
 
     // redirect
     redirect($link);
