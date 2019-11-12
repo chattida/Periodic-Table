@@ -124,7 +124,6 @@ function showTable(obj) {
                                     <td rowspan="2" class="cl_TransitionMetal" onmouseover="mygroup('Transition Metal')"><div class="rotate"><div><a>TransitionMetal</a></div></div></td>
                                     <td rowspan="2" class="cl_PostTransitionMetal" onmouseover="mygroup('Post-transition metals')"><div class="rotate"><div><a>PostTransitionMetal</a></div></div></td>
                                     <td rowspan="2" class="cl_Nonmetal" onmouseover="mygroup('Nonmetal')"><div class="rotate"><div><a>Nonmetal</a></div></div></td>
-                                    <td rowspan="2" class="cl_Nonmetal" onmouseover="mygroup('Halogen')"><div class="rotate"><div><a>Halogen</a></div></div></td>
                                     <td rowspan="2" class="cl_NobleGas" onmouseover="mygroup('Noble Gas')"><div class="rotate"><div><a>NobleGas</a></div></div></td>
                                 </tr>
                                 <tr>
@@ -224,7 +223,7 @@ function showTable(obj) {
 function mygroup(choose) {
     let metal = ["โลหะอัลคาไล", "โลหะอัลคาไลน์เอิร์ธ", "แลนทาไนด์", "แอกทิไนด์", "โลหะทรานซิชัน", "โลหะหลังทรานซิชัน", 
                 "Alkali Metal", "Alkaline Earth Metal", "Lanthanide", "Actinide", "Transition Metal", "Post-transition metals"]
-    let non_metal = ["อโลหะ", "ก๊าซเฉี่อย", "Nonmetal", "Halogen", "Noble Gas"]
+    let non_metal = ["อโลหะ", "ก๊าซเฉี่อย", "Nonmetal", "Noble Gas"]
     for(let i=1; i<=118; i++) {
         myset = document.getElementById(i);
         if (choose == "more1" || choose == "more2" || choose == "x") {
@@ -283,7 +282,7 @@ function toShow(n) {
 // colorTable function
 function colorTable(type) {
     //color table
-    if(type == "อโลหะ" || type == "Nonmetal" || type == "Halogen") return `cl_Nonmetal`;
+    if(type == "อโลหะ" || type == "Nonmetal") return `cl_Nonmetal`;
     else if(type == "โลหะอัลคาไล" || type == "Alkali Metal") return `cl_AlkaliMetal`;
     else if(type == "โลหะอัลคาไลน์เอิร์ธ" || type == "Alkaline Earth Metal") return `cl_AlkalineEarthMetal`;
     else if(type == "กึ่งโลหะ" || type == "Metalloid") return `cl_Metalloid`;
