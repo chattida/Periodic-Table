@@ -433,3 +433,7 @@ hr {
     background: white;
     border-radius: 50%;
 }
+
+.benefit, .history, .info {
+    color: black;
+}
