@@ -492,3 +492,7 @@ hr {
     background: white;
     border-radius: 50%;
 }
+
+#element_list, #mediaList, #question, #memberList, #mysearch {
+    min-height: 60vh;
+}

@@ -78,7 +78,7 @@
     <div class="container">
         <h3 class="my-3">Element search</h3>
         <hr>
-        <div>
+        <div id="mysearch">
             <form class="form-inline justify-content-center my-3" action="../../search.php" method="POST">
                 <input type="search" class="form-control" id="searchBox" aria-describedby="searchBox" placeholder="Element name" value="<?php echo($_POST['msg']) ?>" name="msg">
                 <button type="submit" class="btn btn-primary ml-2 my-2">Search</button>
