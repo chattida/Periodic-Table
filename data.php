@@ -24,6 +24,7 @@
     function check_darkmode() {
         if (!isset($_COOKIE['darkstatus'])) {
             setcookie("darkstatus", 0, time() + (86400 * 30), "/");
+            header('Location: '.'./data.php');
         }
     }
 
