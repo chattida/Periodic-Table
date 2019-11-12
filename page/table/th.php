@@ -78,7 +78,7 @@
     <!-- content -->
     <div class="container-fluid">
         <div class="table-responsive-lg my-4">
-            <div id="pt-group" class="my-3 text-center"></div>
+            <table id="pt-group" class="mx-auto my-2 text-center"></table>
             <table id="pt-table" class="mx-auto"></table>
         </div>
         <a class="btn_change" href="../php/darkmode.php?path=index"><?php if($_COOKIE['darkstatus']) echo "<i class='fas fa-lightbulb'></i>"; else echo "<i class='fas fa-moon'></i>";?></a>

@@ -22,47 +22,49 @@ request.onreadystatechange = function () {
 function showTable(obj) {
     json_obj = obj
     let txt = "", groupshow = ""
-    let count = 0 // 
-    if (getCookie("lang") == "th") groupshow += `หมู่ธาตุ : `
-    else groupshow += `Group: `
+    let count = 0
+    groupshow += `<tr>`
+    if (getCookie("lang") == "th") groupshow += `<td class="no-wrap">หมู่ธาตุ : </td>`
+    else groupshow += `<td class="no-wrap">Group : </td>`
     if (getCookie("darkstatus") == "1")
-        groupshow += `<a onmouseover="mygroup(1)" class="btn btn-dark text-light">1</a>
-                <a onmouseover="mygroup(2)" class="btn btn-dark text-light">2</a>
-                <a onmouseover="mygroup(3)" class="btn btn-dark text-light">3</a>
-                <a onmouseover="mygroup(4)" class="btn btn-dark text-light">4</a>
-                <a onmouseover="mygroup(5)" class="btn btn-dark text-light">5</a>
-                <a onmouseover="mygroup(6)" class="btn btn-dark text-light">6</a>
-                <a onmouseover="mygroup(7)" class="btn btn-dark text-light">7</a>
-                <a onmouseover="mygroup(8)" class="btn btn-dark text-light">8</a>
-                <a onmouseover="mygroup(9)" class="btn btn-dark text-light">9</a>
-                <a onmouseover="mygroup(10)" class="btn btn-dark text-light">10</a>
-                <a onmouseover="mygroup(11)" class="btn btn-dark text-light">11</a>
-                <a onmouseover="mygroup(12)" class="btn btn-dark text-light">12</a>
-                <a onmouseover="mygroup(13)" class="btn btn-dark text-light">13</a>
-                <a onmouseover="mygroup(14)" class="btn btn-dark text-light">14</a>
-                <a onmouseover="mygroup(15)" class="btn btn-dark text-light">15</a>
-                <a onmouseover="mygroup(16)" class="btn btn-dark text-light">16</a>
-                <a onmouseover="mygroup(17)" class="btn btn-dark text-light">17</a>
-                <a onmouseover="mygroup(18)" class="btn btn-dark text-light">18</a>`
+        groupshow += `<td><a onmouseover="mygroup(1)" class="btn btn-dark text-light">1</a></td>
+                <td><a onmouseover="mygroup(2)" class="btn btn-dark text-light">2</a></td>
+                <td><a onmouseover="mygroup(3)" class="btn btn-dark text-light">3</a></td>
+                <td><a onmouseover="mygroup(4)" class="btn btn-dark text-light">4</a></td>
+                <td><a onmouseover="mygroup(5)" class="btn btn-dark text-light">5</a></td>
+                <td><a onmouseover="mygroup(6)" class="btn btn-dark text-light">6</a></td>
+                <td><a onmouseover="mygroup(7)" class="btn btn-dark text-light">7</a></td>
+                <td><a onmouseover="mygroup(8)" class="btn btn-dark text-light">8</a></td>
+                <td><a onmouseover="mygroup(9)" class="btn btn-dark text-light">9</a></td>
+                <td><a onmouseover="mygroup(10)" class="btn btn-dark text-light">10</a></td>
+                <td><a onmouseover="mygroup(11)" class="btn btn-dark text-light">11</a></td>
+                <td><a onmouseover="mygroup(12)" class="btn btn-dark text-light">12</a></td>
+                <td><a onmouseover="mygroup(13)" class="btn btn-dark text-light">13</a></td>
+                <td><a onmouseover="mygroup(14)" class="btn btn-dark text-light">14</a></td>
+                <td><a onmouseover="mygroup(15)" class="btn btn-dark text-light">15</a></td>
+                <td><a onmouseover="mygroup(16)" class="btn btn-dark text-light">16</a></td>
+                <td><a onmouseover="mygroup(17)" class="btn btn-dark text-light">17</a></td>
+                <td><a onmouseover="mygroup(18)" class="btn btn-dark text-light">18</a></td>`
     else if (getCookie("darkstatus") == "0")
-        groupshow += `<a onmouseover="mygroup(1)" class="btn btn-light">1</a>
-                <a onmouseover="mygroup(2)" class="btn btn-light">2</a>
-                <a onmouseover="mygroup(3)" class="btn btn-light">3</a>
-                <a onmouseover="mygroup(4)" class="btn btn-light">4</a>
-                <a onmouseover="mygroup(5)" class="btn btn-light">5</a>
-                <a onmouseover="mygroup(6)" class="btn btn-light">6</a>
-                <a onmouseover="mygroup(7)" class="btn btn-light">7</a>
-                <a onmouseover="mygroup(8)" class="btn btn-light">8</a>
-                <a onmouseover="mygroup(9)" class="btn btn-light">9</a>
-                <a onmouseover="mygroup(10)" class="btn btn-light">10</a>
-                <a onmouseover="mygroup(11)" class="btn btn-light">11</a>
-                <a onmouseover="mygroup(12)" class="btn btn-light">12</a>
-                <a onmouseover="mygroup(13)" class="btn btn-light">13</a>
-                <a onmouseover="mygroup(14)" class="btn btn-light">14</a>
-                <a onmouseover="mygroup(15)" class="btn btn-light">15</a>
-                <a onmouseover="mygroup(16)" class="btn btn-light">16</a>
-                <a onmouseover="mygroup(17)" class="btn btn-light">17</a>
-                <a onmouseover="mygroup(18)" class="btn btn-light">18</a>`
+        groupshow += `<td><a onmouseover="mygroup(1)" class="btn btn-light">1</a></td>
+                <td><a onmouseover="mygroup(2)" class="btn btn-light">2</a></td>
+                <td><a onmouseover="mygroup(3)" class="btn btn-light">3</a></td>
+                <td><a onmouseover="mygroup(4)" class="btn btn-light">4</a></td>
+                <td><a onmouseover="mygroup(5)" class="btn btn-light">5</a></td>
+                <td><a onmouseover="mygroup(6)" class="btn btn-light">6</a></td>
+                <td><a onmouseover="mygroup(7)" class="btn btn-light">7</a></td>
+                <td><a onmouseover="mygroup(8)" class="btn btn-light">8</a></td>
+                <td><a onmouseover="mygroup(9)" class="btn btn-light">9</a></td>
+                <td><a onmouseover="mygroup(10)" class="btn btn-light">10</a></td>
+                <td><a onmouseover="mygroup(11)" class="btn btn-light">11</a></td>
+                <td><a onmouseover="mygroup(12)" class="btn btn-light">12</a></td>
+                <td><a onmouseover="mygroup(13)" class="btn btn-light">13</a></td>
+                <td><a onmouseover="mygroup(14)" class="btn btn-light">14</a></td>
+                <td><a onmouseover="mygroup(15)" class="btn btn-light">15</a></td>
+                <td><a onmouseover="mygroup(16)" class="btn btn-light">16</a></td>
+                <td><a onmouseover="mygroup(17)" class="btn btn-light">17</a></td>
+                <td><a onmouseover="mygroup(18)" class="btn btn-light">18</a></td>`
+    groupshow += `</tr>`
     groupselect.innerHTML = groupshow
     for (let i = 1; i < 11; i++) {
         txt += `<tr>`
@@ -72,7 +74,6 @@ function showTable(obj) {
                 txt += `<td class="empty-box"></td>`
             } else if (i == 1 && j == 3) {
                 // boxArea-1
-                console.log(count)
                 txt += `<td colspan="3" rowspan="3" id="boxArea-1">
                         <table>
                             <tr>
