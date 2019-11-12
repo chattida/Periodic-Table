@@ -21,13 +21,14 @@ request.onreadystatechange = function () {
 
 function showTable(obj) {
     json_obj = obj
-    let txt = "", groupshow = ""
+    let txt = "", groupshow = "" , title_lang = ""
     let count = 0
     groupshow += `<tr>`
-    if (getCookie("lang") == "th") groupshow += `<td class="no-wrap">หมู่ธาตุ : </td>`
-    else groupshow += `<td class="no-wrap">Group : </td>`
+    if (getCookie("lang") == "th") title_lang = `หมู่ธาตุ : `
+    else title_lang = `Group : `
     if (getCookie("darkstatus") == "1")
-        groupshow += `<td><a onmouseover="mygroup(1)" class="btn btn-dark text-light">1</a></td>
+        groupshow += `<td class="no-wrap text-light">${title_lang}</td>
+                <td><a onmouseover="mygroup(1)" class="btn btn-dark text-light">1</a></td>
                 <td><a onmouseover="mygroup(2)" class="btn btn-dark text-light">2</a></td>
                 <td><a onmouseover="mygroup(3)" class="btn btn-dark text-light">3</a></td>
                 <td><a onmouseover="mygroup(4)" class="btn btn-dark text-light">4</a></td>
@@ -46,7 +47,8 @@ function showTable(obj) {
                 <td><a onmouseover="mygroup(17)" class="btn btn-dark text-light">17</a></td>
                 <td><a onmouseover="mygroup(18)" class="btn btn-dark text-light">18</a></td>`
     else if (getCookie("darkstatus") == "0")
-        groupshow += `<td><a onmouseover="mygroup(1)" class="btn btn-light">1</a></td>
+        groupshow += `<td class="no-wrap">${title_lang}</td>
+                <td><a onmouseover="mygroup(1)" class="btn btn-light">1</a></td>
                 <td><a onmouseover="mygroup(2)" class="btn btn-light">2</a></td>
                 <td><a onmouseover="mygroup(3)" class="btn btn-light">3</a></td>
                 <td><a onmouseover="mygroup(4)" class="btn btn-light">4</a></td>
