@@ -390,6 +390,15 @@ th .rotate div {
     border-radius: 4%;
 }
 
+.info {
+    background:#e7fee5;
+    border-radius: 4%;
+}
+
+.benefit, .history, .info {
+    color: black;
+}
+
 .dataimages{
     width: 27vw;
     height: 80vh;
@@ -419,6 +428,56 @@ hr {
     border-color: white;
 }
 
+.element-img{
+    height: 100%;
+    padding: 2em;
+    border: 1px solid #dee2e6;
+}
+
+.disable-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.full-table {
+    height: 100%;
+}
+
+.description {
+    font-size: 1.1em;
+}
+
+.hr-black {
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.radius {
+    border-radius: 1%;
+}
+
+.btn-purple {
+    color: rgba(0, 0, 0, 0.9);
+    background-color: #d9c4fc;
+    border-color: #d9c4fc;
+    transition: 0.3s;
+}
+
+.btn-purple:hover {
+    color: white;
+    background-color: #b9a6d8;
+    border-color: #b9a6d8;
+}
+
+.table-yellow {
+    background-color: #fbfcc4;
+}
+
+.no-wrap {
+    white-space: nowrap;
+}
+
 .btn_change {
     position: fixed;
     right: 30px;
@@ -432,8 +491,4 @@ hr {
     color: black;
     background: white;
     border-radius: 50%;
-}
-
-.benefit, .history, .info {
-    color: black;
 }

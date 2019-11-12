@@ -114,7 +114,7 @@ function colorTable(type) {
     else if(type == "โลหะอัลคาไลน์เอิร์ธ" || type == "Alkaline Earth Metal") return `cl_AlkalineEarthMetal`;
     else if(type == "กึ่งโลหะ" || type == "Metalloid") return `cl_Metalloid`;
     else if(type == "ก๊าซเฉี่อย" || type == "Noble Gas") return `cl_NobleGas`;
-    else if(type == "โลหะหลังทรานซิชัน" || type == "Post-transition metals") return `cl_PostMetal`;
+    else if(type == "โลหะหลังทรานซิชัน" || type == "Post-transition metals") return `cl_PostTransitionMetal`;
     else if(type == "โลหะทรานซิชัน" || type == "Transition Metal") return `cl_TransitionMetal`;
     else if(type == "แลนทาไนด์" || type == "Lanthanide") return `cl_Lanthanide`;
     else if(type == "แอกทิไนด์" || type == "Actinide") return `cl_Actinide`;

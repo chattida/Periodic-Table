@@ -390,6 +390,11 @@ th .rotate div {
     border-radius: 4%;
 }
 
+.dataimages{
+    width: 27vw;
+    height: 80vh;
+}
+
 .element-img{
     height: 100%;
     padding: 2em;
