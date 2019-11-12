@@ -13,9 +13,9 @@ let options = {
 
 // json
 if (getCookie("lang") == "th") {
-    requestURL = '../data/elements_th.json'
+    requestURL = './data/elements_th.json'
 } else if (getCookie("lang") == "en") {
-    requestURL = '../data/elements_en.json'
+    requestURL = './data/elements_en.json'
 }
 
 let request = new XMLHttpRequest()
@@ -44,7 +44,7 @@ function showSearch(obj) {
                             <table class="mx-auto">
                                 <tr>
                                     <td class="element-bigbox ${colorTable(searchResult[i].Type)}">
-                                        <a class="boxLink" href="../../data.php?id=${searchResult[i].AtomicNumber}">
+                                        <a class="boxLink" href="./data.php?id=${searchResult[i].AtomicNumber}">
                                             <bigbox>
                                                 <bigNumber>${searchResult[i].AtomicNumber}</bigNumber>
                                                 <bigSymbol>${searchResult[i].Symbol}</bigSymbol>
@@ -55,7 +55,7 @@ function showSearch(obj) {
                                     </td>
                                 </tr>
                             </table>
-                            <a class="my-2 searchlink" href="../../data.php?id=${searchResult[i].AtomicNumber}">${searchResult[i].Element}<sup>${searchResult[i].AtomicNumber}</sup></a>
+                            <a class="my-2 searchlink" href="./data.php?id=${searchResult[i].AtomicNumber}">${searchResult[i].Element}<sup>${searchResult[i].AtomicNumber}</sup></a>
                         </div>`
             }
             searchList.innerHTML = txt
@@ -75,7 +75,7 @@ function showSearch(obj) {
                             <table class="mx-auto">
                                 <tr>
                                     <td class="element-bigbox ${colorTable(searchResult[i].Type)}">
-                                        <a class="boxLink" href="../../data.php?id=${searchResult[i].AtomicNumber}">
+                                        <a class="boxLink" href="./data.php?id=${searchResult[i].AtomicNumber}">
                                             <bigbox>
                                                 <bigNumber>${searchResult[i].AtomicNumber}</bigNumber>
                                                 <bigSymbol>${searchResult[i].Symbol}</bigSymbol>
@@ -86,7 +86,7 @@ function showSearch(obj) {
                                     </td>
                                 </tr>
                             </table>
-                            <a class="my-2 searchlink" href="../../data.php?id=${searchResult[i].AtomicNumber}">${searchResult[i].Element}<sup>${searchResult[i].AtomicNumber}</sup></a>
+                            <a class="my-2 searchlink" href="./data.php?id=${searchResult[i].AtomicNumber}">${searchResult[i].Element}<sup>${searchResult[i].AtomicNumber}</sup></a>
                         </div>`
             }
             searchList.innerHTML = txt

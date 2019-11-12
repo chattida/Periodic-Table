@@ -15,9 +15,9 @@ let quizDialog = []
 let presetQ = [0, 1, 2, 3, 4]
 
 if (getCookie("lang") == "th") {
-    requestURL = '../../data/elements_th.json'
+    requestURL = './data/elements_th.json'
 } else if (getCookie("lang") == "en") {
-    requestURL = '../../data/elements_en.json'
+    requestURL = './data/elements_en.json'
 }
 
 let request = new XMLHttpRequest()

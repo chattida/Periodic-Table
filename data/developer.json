@@ -6,7 +6,7 @@
         "github": "https://github.com/hashtagSELFIE",
         "facebook": "https://www.facebook.com/james2543",
         "ig": "https://www.instagram.com/james555433/",
-        "path": "/assets/developer/profile1.jpg",
+        "path": "./assets/developer/profile1.jpg",
         "role": "Quiz design & develop"
     },
     {
@@ -16,7 +16,7 @@
         "github": "https://github.com/chattida",
         "facebook": "https://www.facebook.com/chattida.newwy",
         "ig": "https://www.instagram.com/nipnew/",
-        "path": "/assets/developer/profile2.jpg",
+        "path": "./assets/developer/profile2.jpg",
         "role": "Data collection, Web design"
     },
     {
@@ -26,7 +26,7 @@
         "github": "https://github.com/max180643",
         "facebook": "https://www.facebook.com/Chanwit.Settavongsin",
         "ig": "https://www.instagram.com/max180643/",
-        "path": "/assets/developer/profile3.jpg",
+        "path": "./assets/developer/profile3.jpg",
         "role": "Web develop, Web design"
     },
     {
@@ -36,7 +36,7 @@
         "github": "https://github.com/NAPATKRUP",
         "facebook": "https://www.facebook.com/napat.arayawattanapong",
         "ig": "https://www.instagram.com/napat_ar/",
-        "path": "/assets/developer/profile4.jpg",
+        "path": "./assets/developer/profile4.jpg",
         "role": "Web develop, Web design"
     },
     {
@@ -46,7 +46,7 @@
         "github": "https://github.com/rapeeza1598",
         "facebook": "https://www.facebook.com/rapeeza1598",
         "ig": "https://www.instagram.com/rapeekhung/",
-        "path": "/assets/developer/profile5.jpg",
+        "path": "./assets/developer/profile5.jpg",
         "role": "Data collection"
     }
 ]

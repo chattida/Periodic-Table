@@ -17,6 +17,14 @@
         $link = $link . "?id=" . $id;
     }
 
+    // get keyword
+    $keyword = $_GET['keyword'];
+    
+    // if keyword had value
+    if (isset($keyword)) {
+        $link = $link . "?keyword=" . $keyword;
+    }
+
     // redirect
     redirect($link);
 

@@ -6,23 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Quiz | Periodic-Table</title>
-    <link rel="icon" href="../../assets/logo/logo.png" type="image/png">
+    <link rel="icon" href="./assets/logo/logo.png" type="image/png">
     <!-- ios -->
     <meta name="apple-mobile-web-app-title" content="Periodic-Table">
-    <link rel="apple-touch-icon" href="../../assets/logo/logo.png">
+    <link rel="apple-touch-icon" href="./assets/logo/logo.png">
     <!-- css -->
-    <link rel="stylesheet" href="../../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/fontawesome.min.css">
-    <link rel="stylesheet" href="../../css/solid.min.css">
-    <link rel="stylesheet" href="../../css/brands.min.css">
-    <link rel="stylesheet" href="<?php if($_COOKIE['darkstatus']) echo "../../css/darkstyle.css"; else echo "../../css/style.css";?>">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/fontawesome.min.css">
+    <link rel="stylesheet" href="./css/solid.min.css">
+    <link rel="stylesheet" href="./css/brands.min.css">
+    <link rel="stylesheet" href="<?php if($_COOKIE['darkstatus']) echo "./css/darkstyle.css"; else echo "./css/style.css";?>">
 </head>
 
 <body>
     <!-- navbar -->
     <nav class="navbar <?php if($_COOKIE['darkstatus']) echo "navbar-dark bg-dark"; else echo "navbar-light bg-light";?> navbar-expand-lg pr-2">
-        <a class="navbar-brand" href="index.php">
-            <img src="../../assets/logo/logo.png" width="30" height="30" alt="Periodic-Table's logo" class="mr-1">
+        <a class="navbar-brand" href="./index.php">
+            <img src="./assets/logo/logo.png" width="30" height="30" alt="Periodic-Table's logo" class="mr-1">
             Periodic-Table
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -33,23 +33,23 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item mx-1">
-                    <a class="nav-link" href="index.php">Home</a>
+                    <a class="nav-link" href="./index.php">Home</a>
                 </li>
                 <li class="nav-item mx-1">
-                    <a class="nav-link" href="list.php">Element</a>
+                    <a class="nav-link" href="./list.php">Element</a>
                 </li>
                 <li class="nav-item mx-1">
-                    <a class="nav-link" href="media.php">Media</a>
+                    <a class="nav-link" href="./media.php">Media</a>
                 </li>
                 <li class="nav-item mx-1 active">
-                    <a class="nav-link" href="quiz.php">Quiz</a>
+                    <a class="nav-link" href="./quiz.php">Quiz</a>
                 </li>
                 <li class="nav-item mx-1">
-                    <a class="nav-link" href="developer.php">Developer</a>
+                    <a class="nav-link" href="./developer.php">Developer</a>
                 </li>
             </ul>
             <!-- search -->
-            <form class="form-inline" action="/search.php" method="POST">
+            <form class="form-inline" action="./search.php" method="POST">
                 <div class="input-group">
                     <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="msg">
                     <div class="input-group-append">
@@ -65,11 +65,11 @@
                         <i class="fas fa-globe-americas"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right mt-2" aria-labelledby="dropdownLanguage">
-                        <a class="dropdown-item" href="../php/change.php?lang=en&path=quiz"><span
+                        <a class="dropdown-item" href="./php/change.php?lang=en&path=quiz"><span
                                 class="flag-icon flag-icon-us mr-2"></span>English<i
                                 class="fas fa-check text-success ml-1"></i>
                         </a>
-                        <a class="dropdown-item" href="../php/change.php?lang=th&path=quiz"><span
+                        <a class="dropdown-item" href="./php/change.php?lang=th&path=quiz"><span
                                 class="flag-icon flag-icon-th mr-2"></span>Thai</a>
                     </div>
                 </li>
@@ -104,19 +104,19 @@
                 <div id="startbox" class="col-lg-3 col-md-4 col-sm-5 col-5 py-3 my-3" onclick="move()">Start</div>
             </div>
         </div>
-        <a class="btn_change" href="../php/darkmode.php?path=quiz"><?php if($_COOKIE['darkstatus']) echo "<i class='fas fa-lightbulb'></i>"; else echo "<i class='fas fa-moon'></i>";?></a>
+        <a class="btn_change" href="./php/darkmode.php?path=quiz"><?php if($_COOKIE['darkstatus']) echo "<i class='fas fa-lightbulb'></i>"; else echo "<i class='fas fa-moon'></i>";?></a>
         <!-- footer -->
         <hr>
         <p class="text-center <?php if($_COOKIE['darkstatus']) echo "text-light"; else echo "text-dark";?>"><i class="fas fa-flask"></i> Periodic-Table | Web Technology Project (2019)</p>
     </div>
     <!-- script -->
-    <script src="../../js/jquery-3.4.1.min.js"></script>
-    <script src="../../js/popper.min.js"></script>
-    <script src="../../js/bootstrap.min.js"></script>
-    <script src="../../js/fontawesome.min.js"></script>
-    <script src="../../js/solid.min.js"></script>
-    <script src="../../js/brands.min.js"></script>
-    <script src="../../js/myScript/quiz.js"></script>
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/fontawesome.min.js"></script>
+    <script src="./js/solid.min.js"></script>
+    <script src="./js/brands.min.js"></script>
+    <script src="./js/myScript/quiz.js"></script>
 </body>
 
 </html>

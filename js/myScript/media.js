@@ -2,9 +2,9 @@ let element_list = document.getElementById("mediaList")
 let requestURL = ''
 
 if (getCookie("lang") == "th") {
-    requestURL = '../data/media_th.json'
+    requestURL = './data/media_th.json'
 } else if (getCookie("lang") == "en") {
-    requestURL = '../data/media_en.json'
+    requestURL = './data/media_en.json'
 }
 
 let request = new XMLHttpRequest()

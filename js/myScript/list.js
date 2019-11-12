@@ -2,9 +2,9 @@ let element_list = document.getElementById("element_list")
 let requestURL = ''
 
 if (getCookie("lang") == "th") {
-    requestURL = '../data/elements_th.json'
+    requestURL = './data/elements_th.json'
 } else if (getCookie("lang") == "en") {
-    requestURL = '../data/elements_en.json'
+    requestURL = './data/elements_en.json'
 }
 
 let request = new XMLHttpRequest()
@@ -42,7 +42,7 @@ function showList(obj) {
                 txt += `<h3 class="ml-3"><i class="fas fa-caret-right"></i> ${key}</h3>`
             }
             for (let j = 0; j < check[key].length; j++) {
-                txt += `<a class="ml-4 my-2 link" href="../../data.php?id=${check[key][j][0]}">${check[key][j][1]}<sup>${check[key][j][0]}</sup></a>`
+                txt += `<a class="ml-4 my-2 link" href="./data.php?id=${check[key][j][0]}">${check[key][j][1]}<sup>${check[key][j][0]}</sup></a>`
                 if (j == check[key].length - 1) {
                     txt += `</div>`
                 }
@@ -61,7 +61,7 @@ function showList(obj) {
                 txt += `<h3 class="ml-3"><i class="fas fa-caret-right"></i> ${key}</h3>`
             }
             for (let j = 0; j < check[key].length; j++) {
-                txt += `<a class="ml-4 my-2 link" href="../../data.php?id=${check[key][j][0]}">${check[key][j][1]}<sup>${check[key][j][0]}</sup></a>`
+                txt += `<a class="ml-4 my-2 link" href="./data.php?id=${check[key][j][0]}">${check[key][j][1]}<sup>${check[key][j][0]}</sup></a>`
                 if (j == check[key].length - 1) {
                     txt += `</div>`
                 }

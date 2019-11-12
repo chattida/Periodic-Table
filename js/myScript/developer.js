@@ -1,5 +1,5 @@
 let memberList = document.getElementById("memberList")
-let requestURL = '../data/developer.json'
+let requestURL = './data/developer.json'
 
 let request = new XMLHttpRequest()
 request.onreadystatechange = function () {

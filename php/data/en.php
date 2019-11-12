@@ -11,7 +11,7 @@
     $id = (int) $_GET['id'] - 1;
     $id_ = $id + 1;
     if ($id_ > 118 || $id_ < 1) {
-        redirect("../../index.php");
+        redirect("./index.php");
     }
 
     function redirect($url) {
@@ -31,23 +31,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?php echo($json_data[$id]['Element'] . " | Periodic-Table"); ?></title>
-    <link rel="icon" href="../assets/logo/logo.png" type="image/png">
+    <link rel="icon" href="./assets/logo/logo.png" type="image/png">
     <!-- ios -->
     <meta name="apple-mobile-web-app-title" content="<?php echo($json_data[$id]['Element'] . " | Periodic-Table"); ?>">
-    <link rel="apple-touch-icon" href="../assets/logo/logo.png">
+    <link rel="apple-touch-icon" href="./assets/logo/logo.png">
     <!-- css -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/fontawesome.min.css">
-    <link rel="stylesheet" href="../css/solid.min.css">
-    <link rel="stylesheet" href="../css/brands.min.css">
-    <link rel="stylesheet" href="<?php if($_COOKIE['darkstatus']) echo "../../css/darkstyle.css"; else echo "../../css/style.css";?>">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/fontawesome.min.css">
+    <link rel="stylesheet" href="./css/solid.min.css">
+    <link rel="stylesheet" href="./css/brands.min.css">
+    <link rel="stylesheet" href="<?php if($_COOKIE['darkstatus']) echo "./css/darkstyle.css"; else echo "./css/style.css";?>">
 </head>
 
 <body>
     <!-- navbar -->
     <nav class="navbar <?php if($_COOKIE['darkstatus']) echo "navbar-dark bg-dark"; else echo "navbar-light bg-light";?> navbar-expand-lg pr-2">
-        <a class="navbar-brand" href="index.php">
-            <img src="../assets/logo/logo.png" width="30" height="30" alt="Periodic-Table\'s logo" class="mr-1">
+        <a class="navbar-brand" href="./index.php">
+            <img src="./assets/logo/logo.png" width="30" height="30" alt="Periodic-Table\'s logo" class="mr-1">
             Periodic-Table
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -58,23 +58,23 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item mx-1">
-                    <a class="nav-link" href="index.php">Home</a>
+                    <a class="nav-link" href="./index.php">Home</a>
                 </li>
                 <li class="nav-item mx-1">
-                    <a class="nav-link" href="list.php">Element</a>
+                    <a class="nav-link" href="./list.php">Element</a>
                 </li>
                 <li class="nav-item mx-1">
-                    <a class="nav-link" href="media.php">Media</a>
+                    <a class="nav-link" href="./media.php">Media</a>
                 </li>
                 <li class="nav-item mx-1">
-                    <a class="nav-link" href="quiz.php">Quiz</a>
+                    <a class="nav-link" href="./quiz.php">Quiz</a>
                 </li>
                 <li class="nav-item mx-1">
-                    <a class="nav-link" href="developer.php">Developer</a>
+                    <a class="nav-link" href="./developer.php">Developer</a>
                 </li>
             </ul>
             <!-- search -->
-            <form class="form-inline" action="/search.php" method="POST">
+            <form class="form-inline" action="./search.php" method="POST">
                 <div class="input-group">
                     <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="msg">
                     <div class="input-group-append">
@@ -111,7 +111,7 @@
         </div>
         <div class="row">
             <div class="col-lg-4 col-md-11 col-sm-12 col-12 mx-auto my-3">
-                <img class="element-img radius mx-auto d-block" src="assets/element/e<?php
+                <img class="element-img radius mx-auto d-block" src="./assets/element/e<?php
                     $picname = '' . $id_;
                     if (strlen($picname) == 1) {
                         $picname = '00' . $id_;
@@ -189,19 +189,19 @@
                 <a href="<?php echo ("{$json_data2['wiki'][$id]['en']}"); ?>"><button type="button" class="btn btn-purple py-2 px-3">More data <i class="fab fa-wikipedia-w"></i></button></a>
             </div>
         </div>
-        <a class="btn_change" href="<?php echo "../php/darkmode.php?path=data&id={$id_}"?>"><?php if($_COOKIE['darkstatus']) echo "<i class='fas fa-lightbulb'></i>"; else echo "<i class='fas fa-moon'></i>";?></a>
+        <a class="btn_change" href="<?php echo "./php/darkmode.php?path=data&id={$id_}"?>"><?php if($_COOKIE['darkstatus']) echo "<i class='fas fa-lightbulb'></i>"; else echo "<i class='fas fa-moon'></i>";?></a>
         <!-- footer -->
         <hr>
         <p class="text-center <?php if($_COOKIE['darkstatus']) echo "text-light"; else echo "text-dark";?>"><i class="fas fa-flask"></i> Periodic-Table | Web Technology Project (2019)</p>
     </div>
 
     <!-- script -->
-    <script src="../js/jquery-3.4.1.min.js"></script>
-    <script src="../js/popper.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/fontawesome.min.js"></script>
-    <script src="../js/solid.min.js"></script>
-    <script src="../js/myScript/table.js"></script>
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/fontawesome.min.js"></script>
+    <script src="./js/solid.min.js"></script>
+    <script src="./js/myScript/table.js"></script>
 </body>
 
 </html>

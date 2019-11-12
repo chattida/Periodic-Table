@@ -458,6 +458,7 @@ th .rotate div {
     color: white;
     background: black;
     border-radius: 50%;
+    z-index: 3;
 }
 
 #element_list, #mediaList, #question, #memberList, #mysearch {
