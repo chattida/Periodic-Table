@@ -1,14 +1,14 @@
 <?php
     function page_lang() {
         if (check_cookie()) {
-            include("./page/developer/th.html");
+            include("./page/developer/th.php");
         } else if ($_COOKIE['lang'] == "th") {
-            include("./page/developer/th.html");
+            include("./page/developer/th.php");
         } else if ($_COOKIE['lang'] == "en") {
-            include("./page/developer/en.html");
+            include("./page/developer/en.php");
         } else {
             setcookie("lang", "th", time() + (86400 * 30), "/");
-            include("./page/developer/th.html");
+            include("./page/developer/th.php");
         }
     }
 
@@ -20,6 +20,14 @@
             return false;
         }
     }
+
+    function check_darkmode() {
+        if (!isset($_COOKIE['darkstatus'])) {
+            setcookie("darkstatus", 0, time() + (86400 * 30), "/");
+        }
+    }
+
+    check_darkmode();
 
     page_lang();
 ?>

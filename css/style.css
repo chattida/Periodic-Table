@@ -166,6 +166,10 @@ bigMass {
     border: 2px solid black;
 }
 
+.myType td:hover, .myType th:hover {
+    outline: 4px solid rgba(0, 132, 255, 0.5);
+}
+
 .myType th {
     border: 3px solid black;
 }

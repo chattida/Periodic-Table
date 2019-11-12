@@ -25,24 +25,44 @@ function showTable(obj) {
     let count = 0 // 
     if (getCookie("lang") == "th") groupshow += `หมู่ธาตุ : `
     else groupshow += `Group: `
-    groupshow += `<a onmouseover="mygroup(1)" class="btn btn-light">1</a>
-            <a onmouseover="mygroup(2)" class="btn btn-light">2</a>
-            <a onmouseover="mygroup(3)" class="btn btn-light">3</a>
-            <a onmouseover="mygroup(4)" class="btn btn-light">4</a>
-            <a onmouseover="mygroup(5)" class="btn btn-light">5</a>
-            <a onmouseover="mygroup(6)" class="btn btn-light">6</a>
-            <a onmouseover="mygroup(7)" class="btn btn-light">7</a>
-            <a onmouseover="mygroup(8)" class="btn btn-light">8</a>
-            <a onmouseover="mygroup(9)" class="btn btn-light">9</a>
-            <a onmouseover="mygroup(10)" class="btn btn-light">10</a>
-            <a onmouseover="mygroup(11)" class="btn btn-light">11</a>
-            <a onmouseover="mygroup(12)" class="btn btn-light">12</a>
-            <a onmouseover="mygroup(13)" class="btn btn-light">13</a>
-            <a onmouseover="mygroup(14)" class="btn btn-light">14</a>
-            <a onmouseover="mygroup(15)" class="btn btn-light">15</a>
-            <a onmouseover="mygroup(16)" class="btn btn-light">16</a>
-            <a onmouseover="mygroup(17)" class="btn btn-light">17</a>
-            <a onmouseover="mygroup(18)" class="btn btn-light">18</a>`
+    if (getCookie("darkstatus") == "1")
+        groupshow += `<a onmouseover="mygroup(1)" class="btn btn-dark text-light">1</a>
+                <a onmouseover="mygroup(2)" class="btn btn-dark text-light">2</a>
+                <a onmouseover="mygroup(3)" class="btn btn-dark text-light">3</a>
+                <a onmouseover="mygroup(4)" class="btn btn-dark text-light">4</a>
+                <a onmouseover="mygroup(5)" class="btn btn-dark text-light">5</a>
+                <a onmouseover="mygroup(6)" class="btn btn-dark text-light">6</a>
+                <a onmouseover="mygroup(7)" class="btn btn-dark text-light">7</a>
+                <a onmouseover="mygroup(8)" class="btn btn-dark text-light">8</a>
+                <a onmouseover="mygroup(9)" class="btn btn-dark text-light">9</a>
+                <a onmouseover="mygroup(10)" class="btn btn-dark text-light">10</a>
+                <a onmouseover="mygroup(11)" class="btn btn-dark text-light">11</a>
+                <a onmouseover="mygroup(12)" class="btn btn-dark text-light">12</a>
+                <a onmouseover="mygroup(13)" class="btn btn-dark text-light">13</a>
+                <a onmouseover="mygroup(14)" class="btn btn-dark text-light">14</a>
+                <a onmouseover="mygroup(15)" class="btn btn-dark text-light">15</a>
+                <a onmouseover="mygroup(16)" class="btn btn-dark text-light">16</a>
+                <a onmouseover="mygroup(17)" class="btn btn-dark text-light">17</a>
+                <a onmouseover="mygroup(18)" class="btn btn-dark text-light">18</a>`
+    else if (getCookie("darkstatus") == "0")
+        groupshow += `<a onmouseover="mygroup(1)" class="btn btn-light">1</a>
+                <a onmouseover="mygroup(2)" class="btn btn-light">2</a>
+                <a onmouseover="mygroup(3)" class="btn btn-light">3</a>
+                <a onmouseover="mygroup(4)" class="btn btn-light">4</a>
+                <a onmouseover="mygroup(5)" class="btn btn-light">5</a>
+                <a onmouseover="mygroup(6)" class="btn btn-light">6</a>
+                <a onmouseover="mygroup(7)" class="btn btn-light">7</a>
+                <a onmouseover="mygroup(8)" class="btn btn-light">8</a>
+                <a onmouseover="mygroup(9)" class="btn btn-light">9</a>
+                <a onmouseover="mygroup(10)" class="btn btn-light">10</a>
+                <a onmouseover="mygroup(11)" class="btn btn-light">11</a>
+                <a onmouseover="mygroup(12)" class="btn btn-light">12</a>
+                <a onmouseover="mygroup(13)" class="btn btn-light">13</a>
+                <a onmouseover="mygroup(14)" class="btn btn-light">14</a>
+                <a onmouseover="mygroup(15)" class="btn btn-light">15</a>
+                <a onmouseover="mygroup(16)" class="btn btn-light">16</a>
+                <a onmouseover="mygroup(17)" class="btn btn-light">17</a>
+                <a onmouseover="mygroup(18)" class="btn btn-light">18</a>`
     groupselect.innerHTML = groupshow
     for (let i = 1; i < 11; i++) {
         txt += `<tr>`
@@ -73,9 +93,9 @@ function showTable(obj) {
                 if (getCookie("lang") == "th") {
                     txt += `<center><table class="myType text-center">
                                 <tr>
-                                    <th colspan="5" onmouseover="mygroup('Metal')"><a>โลหะ</a></th>
+                                    <th colspan="5" class="title_type" onmouseover="mygroup('Metal')"><a>โลหะ</a></th>
                                     <th rowspan="4" class="cl_Metalloid" onmouseover="mygroup('Metalloid')"><div class="rotate"><div><a>กึ่งโลหะ</a></div></div></th>
-                                    <th colspan="2" onmouseover="mygroup('Non-metal')"><a>อโลหะ</a></th>
+                                    <th colspan="2" class="title_type" onmouseover="mygroup('Non-metal')"><a>อโลหะ</a></th>
                                 <tr>
                                 <tr>
                                     <td rowspan="2" class="cl_AlkaliMetal" onmouseover="mygroup('โลหะอัลคาไล')"><div class="rotate"><div><a>โลหะอัลคาไล</a></div></div></td>
@@ -93,9 +113,9 @@ function showTable(obj) {
                 } else if (getCookie("lang") == "en") {
                     txt += `<center><table class="myType text-center">
                                 <tr>
-                                    <th colspan="5" onmouseover="mygroup('Metal')"><a>Metal</a></th>
+                                    <th colspan="5" class="title_type" onmouseover="mygroup('Metal')"><a>Metal</a></th>
                                     <th rowspan="4" class="cl_Metalloid" onmouseover="mygroup('Metalloid')"><div class="rotate"><div><a>Metalloid</a></div></div></th>
-                                    <th colspan="3" onmouseover="mygroup('Non-metal')"><a>NonMetal</a></th>
+                                    <th colspan="3" class="title_type" onmouseover="mygroup('Non-metal')"><a>NonMetal</a></th>
                                 <tr>
                                 <tr>
                                     <td rowspan="2" class="cl_AlkaliMetal" onmouseover="mygroup('Alkali Metal')"><div class="rotate"><div><a>AlkaliMetal</a></div></div></td>
@@ -116,19 +136,34 @@ function showTable(obj) {
             } else if (i == 1 && j == 5) {
                 // boxArea-3
                 txt += `<td colspan="5" rowspan="1" class="text-center" id="pt-phase">`
-                if (getCookie("lang") == "th") {
+                if (getCookie("lang") == "th" && getCookie("darkstatus") == "0") {
                     txt += `สถานะ : 
                     <a onmouseover="mygroup('ของแข็ง')" class="btn btn-light" alt="ของแข็ง" title="ของแข็ง"><i class="fas fa-cubes"></i></a>
                     <a onmouseover="mygroup('ของเหลว')" class="btn btn-light" alt="ของเหลว" title="ของเหลว"><i class="fas fa-tint"></i></a>
                     <a onmouseover="mygroup('ก๊าซ')" class="btn btn-light" alt="ก๊าซ" title="ก๊าซ"><i class="fas fa-wind"></i></a>
                     <a onmouseover="mygroup('Unknown')" class="btn btn-light" alt="ไม่ทราบ" title="ไม่ทราบ"><i class="fas fa-question-circle"></i></a><br>
                     `
-                } else if (getCookie("lang") == "en") {
+                } else if (getCookie("lang") == "en" && getCookie("darkstatus") == "0") {
                     txt += `Phase : 
                     <a onmouseover="mygroup('solid')" class="btn btn-light" alt="Solid" title="Solid"><i class="fas fa-cubes"></i></a>
                     <a onmouseover="mygroup('liquid')" class="btn btn-light" alt="Liquid" title="Liquid"><i class="fas fa-tint"></i></a>
                     <a onmouseover="mygroup('gas')" class="btn btn-light" alt="Gas" title="Gas"><i class="fas fa-wind"></i></a>
                     <a onmouseover="mygroup('Unknown')" class="btn btn-light" alt="Unknown" title="Unknown"><i class="fas fa-question-circle"></i></a><br>
+                    `
+                }
+                else if (getCookie("lang") == "th" && getCookie("darkstatus") == "1") {
+                    txt += `สถานะ : 
+                    <a onmouseover="mygroup('ของแข็ง')" class="btn btn-dark" alt="ของแข็ง" title="ของแข็ง"><i class="fas fa-cubes"></i></a>
+                    <a onmouseover="mygroup('ของเหลว')" class="btn btn-dark" alt="ของเหลว" title="ของเหลว"><i class="fas fa-tint"></i></a>
+                    <a onmouseover="mygroup('ก๊าซ')" class="btn btn-dark" alt="ก๊าซ" title="ก๊าซ"><i class="fas fa-wind"></i></a>
+                    <a onmouseover="mygroup('Unknown')" class="btn btn-dark" alt="ไม่ทราบ" title="ไม่ทราบ"><i class="fas fa-question-circle"></i></a><br>
+                    `
+                } else if (getCookie("lang") == "en" && getCookie("darkstatus") == "1") {
+                    txt += `Phase : 
+                    <a onmouseover="mygroup('solid')" class="btn btn-dark" alt="Solid" title="Solid"><i class="fas fa-cubes"></i></a>
+                    <a onmouseover="mygroup('liquid')" class="btn btn-dark" alt="Liquid" title="Liquid"><i class="fas fa-tint"></i></a>
+                    <a onmouseover="mygroup('gas')" class="btn btn-dark" alt="Gas" title="Gas"><i class="fas fa-wind"></i></a>
+                    <a onmouseover="mygroup('Unknown')" class="btn btn-dark" alt="Unknown" title="Unknown"><i class="fas fa-question-circle"></i></a><br>
                     `
                 }
                 txt += `</td>`
