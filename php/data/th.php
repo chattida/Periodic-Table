@@ -41,11 +41,12 @@
     <link rel="stylesheet" href="../css/solid.min.css">
     <link rel="stylesheet" href="../css/brands.min.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="<?php if($_COOKIE['darkstatus']) echo "../../css/darkstyle.css"; else echo "../../css/style.css";?>">
 </head>
 
 <body>
     <!-- navbar -->
-    <nav class="navbar navbar-light bg-light navbar-expand-lg pr-2">
+    <nav class="navbar <?php if($_COOKIE['darkstatus']) echo "navbar-dark bg-dark"; else echo "navbar-light bg-light";?> navbar-expand-lg pr-2">
         <a class="navbar-brand" href="index.php">
             <img src="../assets/logo/logo.png" width="30" height="30" alt="โลโก้เว็บไซต์ ตารางธาตุ" class="mr-1">
             ตารางธาตุ
@@ -222,9 +223,10 @@
                     <a href="<?php echo ("{$json_data2['wiki'][$id]['th']}"); ?>"><button type="button" class="btn btn-purple py-2 px-3">ข้อมูลเพิ่มเติม <i class="fab fa-wikipedia-w"></i></button></a>
                 </div>
             </div>
+            <a class="btn_change" href="<?php echo "../php/darkmode.php?path=data&id={$id_}"?>"><?php if($_COOKIE['darkstatus']) echo "<i class='fas fa-lightbulb'></i>"; else echo "<i class='fas fa-moon'></i>";?></a>
         <!-- footer -->
         <hr>
-        <p class="text-center text-dark"><i class="fas fa-flask"></i> Periodic-Table | Web Technology Project (2019)</p>
+        <p class="text-center <?php if($_COOKIE['darkstatus']) echo "text-light"; else echo "text-dark";?>"><i class="fas fa-flask"></i> Periodic-Table | Web Technology Project (2019)</p>
         </div>
     </div>
     <!-- script -->
