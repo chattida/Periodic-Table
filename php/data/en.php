@@ -184,46 +184,12 @@
                 ?>
             </div>
         </div>
-        
         <div class="row">
-            <div class="col-lg-5 col-md-11 col-sm-11 col-11 mx-auto history py-4 px-4 my-4">
-            <?php
-                echo("<h4 class=\"font-weight-bold ml-1\"><i class=\"fas fa-angle-right mx-1\"></i> History <i class=\"fas fa-compass\"></i></h4><hr class=\"hr-black mt-0 mb-2\">");
-                foreach($json_data1[$id]['Discovery'] as $data) {
-                    if ($data == "") {
-                        echo("<p class=\"description my-3\">&emsp;Data not found!</p>");
-                    } else {
-                        echo("<p class=\"description my-3\">&emsp;&emsp;&emsp;{$data}</p>");
-                    }
-                }
-            ?>
+            <div class="col-lg-2 col-md-4 col-sm-6 col-6 mx-auto">
+                <a href="<?php echo ("{$json_data2['wiki'][$id]['en']}"); ?>"><button type="button" class="btn btn-purple py-2 px-3">More data <i class="fab fa-wikipedia-w"></i></button></a>
             </div>
-            <div class="col-lg-5 col-md-11 col-sm-11 col-11 mx-auto benefit py-4 px-4 my-4">
-            <?php
-                echo("<h4 class=\"font-weight-bold ml-1\"><i class=\"fas fa-angle-right mx-1\"></i> Benefit <i class=\"fas fa-question-circle\"></i></h4><hr class=\"hr-black mt-0 mb-2\">");
-
-                foreach($json_data1[$id]['Benefit_extra'] as $data) {
-                    if ($data != "") {
-                        echo("<p class=\"description my-3\">&emsp;&emsp;{$data}</p>");
-                    }
-                }
-
-                foreach($json_data1[$id]['Benefit'] as $data) {
-                    if ($data == "") {
-                        echo("<p class=\"description my-3\">&emsp;Data not found!</p>");
-                    } else {
-                        echo("<p class=\"description mt-3\">&emsp;&emsp;- {$data}</p>");
-                    }
-                }
-                echo("</div>");
-            ?>
-            </div>
-            <div class="row">
-                <div class="col-lg-2 col-md-4 col-sm-6 col-6 mx-auto">
-                    <a href="<?php echo ("{$json_data2['wiki'][$id]['en']}"); ?>"><button type="button" class="btn btn-purple py-2 px-3">More data <i class="fab fa-wikipedia-w"></i></button></a>
-                </div>
-            </div>
-            <a class="btn_change" href="<?php echo "../php/darkmode.php?path=data&id={$id_}"?>"><?php if($_COOKIE['darkstatus']) echo "<i class='fas fa-lightbulb'></i>"; else echo "<i class='fas fa-moon'></i>";?></a>
+        </div>
+        <a class="btn_change" href="<?php echo "../php/darkmode.php?path=data&id={$id_}"?>"><?php if($_COOKIE['darkstatus']) echo "<i class='fas fa-lightbulb'></i>"; else echo "<i class='fas fa-moon'></i>";?></a>
         <!-- footer -->
         <hr>
         <p class="text-center <?php if($_COOKIE['darkstatus']) echo "text-light"; else echo "text-dark";?>"><i class="fas fa-flask"></i> Periodic-Table | Web Technology Project (2019)</p>
