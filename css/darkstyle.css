@@ -496,3 +496,47 @@ hr {
 #element_list, #mediaList, #question, #memberList, #mysearch {
     min-height: 60vh;
 }
+
+#page {
+    display: none;
+    animation: fadein .5s;
+}
+
+#loading {
+    width: 100%;
+    height: 100vh;
+    display: block;
+    animation: fadein .5s;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#loading p {
+    margin: 0;
+    font-size: 50vmin;
+    width: 50vmin;
+    height: 50vmin;
+    background: #343a40;
+    opacity: 0.7;
+    position: fixed;
+    left: calc(50% - 25vmin);
+    top: calc(50vh - 35vmin);
+    text-align: center;
+    animation: coloring 2.5s infinite;
+}
+
+@keyframes coloring {
+    0%  {color:#e5e5e5;}
+    20%   {color:#a1aedb;}
+    40%  {color:#f8a891;}
+    60%  {color:#c99cc9;}
+    80%  {color:#f2f190;}
+    100% {color:#9fbf91;}
+}

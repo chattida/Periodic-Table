@@ -18,96 +18,99 @@
     <link rel="stylesheet" href="<?php if($_COOKIE['darkstatus']) echo "./css/darkstyle.css"; else echo "./css/style.css";?>">
 </head>
 
-<body>
-    <!-- navbar -->
-    <nav class="navbar <?php if($_COOKIE['darkstatus']) echo "navbar-dark bg-dark"; else echo "navbar-light bg-light";?> navbar-expand-lg pr-2">
-        <a class="navbar-brand" href="./index.php">
-            <img src="./assets/logo/logo.png" width="30" height="30" alt="Periodic-Table's logo" class="mr-1">
-            Periodic-Table
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+<body onload="loaingFunction()">
+    <div id="loading"><p><i class="fas fa-question"></i></p></div>
+    <div id="page">
+        <!-- navbar -->
+        <nav class="navbar <?php if($_COOKIE['darkstatus']) echo "navbar-dark bg-dark"; else echo "navbar-light bg-light";?> navbar-expand-lg pr-2">
+            <a class="navbar-brand" href="./index.php">
+                <img src="./assets/logo/logo.png" width="30" height="30" alt="Periodic-Table's logo" class="mr-1">
+                Periodic-Table
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item mx-1">
-                    <a class="nav-link" href="./index.php">Home</a>
-                </li>
-                <li class="nav-item mx-1">
-                    <a class="nav-link" href="./list.php">Element</a>
-                </li>
-                <li class="nav-item mx-1">
-                    <a class="nav-link" href="./media.php">Media</a>
-                </li>
-                <li class="nav-item mx-1 active">
-                    <a class="nav-link" href="./quiz.php">Quiz</a>
-                </li>
-                <li class="nav-item mx-1">
-                    <a class="nav-link" href="./developer.php">Developer</a>
-                </li>
-            </ul>
-            <!-- search -->
-            <form class="form-inline" action="./search.php" method="POST">
-                <div class="input-group">
-                    <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="msg">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search"></i></button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item mx-1">
+                        <a class="nav-link" href="./index.php">Home</a>
+                    </li>
+                    <li class="nav-item mx-1">
+                        <a class="nav-link" href="./list.php">Element</a>
+                    </li>
+                    <li class="nav-item mx-1">
+                        <a class="nav-link" href="./media.php">Media</a>
+                    </li>
+                    <li class="nav-item mx-1 active">
+                        <a class="nav-link" href="./quiz.php">Quiz</a>
+                    </li>
+                    <li class="nav-item mx-1">
+                        <a class="nav-link" href="./developer.php">Developer</a>
+                    </li>
+                </ul>
+                <!-- search -->
+                <form class="form-inline" action="./search.php" method="POST">
+                    <div class="input-group">
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="msg">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search"></i></button>
+                        </div>
                     </div>
-                </div>
-            </form>
-            <!-- language -->
-            <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle ml-1" href="#" id="dropdownLanguage" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-globe-americas"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right mt-2" aria-labelledby="dropdownLanguage">
-                        <a class="dropdown-item" href="./php/change.php?lang=en&path=quiz"><span
-                                class="flag-icon flag-icon-us mr-2"></span>English<i
-                                class="fas fa-check text-success ml-1"></i>
+                </form>
+                <!-- language -->
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle ml-1" href="#" id="dropdownLanguage" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-globe-americas"></i>
                         </a>
-                        <a class="dropdown-item" href="./php/change.php?lang=th&path=quiz"><span
-                                class="flag-icon flag-icon-th mr-2"></span>Thai</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
+                        <div class="dropdown-menu dropdown-menu-right mt-2" aria-labelledby="dropdownLanguage">
+                            <a class="dropdown-item" href="./php/change.php?lang=en&path=quiz"><span
+                                    class="flag-icon flag-icon-us mr-2"></span>English<i
+                                    class="fas fa-check text-success ml-1"></i>
+                            </a>
+                            <a class="dropdown-item" href="./php/change.php?lang=th&path=quiz"><span
+                                    class="flag-icon flag-icon-th mr-2"></span>Thai</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
-    <!-- content -->
-    <div class="container">
-        <h3 class="my-3">Quiz</h3>
-        <hr>
-        <div id="question" class="disable-select">
-            <h2 id="quizTitle" class="text-center">Click the button below to start</h2>
-            <div id="myProgress" class="row justify-content-center">
-                <div class="col-lg-6 my-1">
-                    <div id="myBar"></div>
+        <!-- content -->
+        <div class="container">
+            <h3 class="my-3">Quiz</h3>
+            <hr>
+            <div id="question" class="disable-select">
+                <h2 id="quizTitle" class="text-center">Click the button below to start</h2>
+                <div id="myProgress" class="row justify-content-center">
+                    <div class="col-lg-6 my-1">
+                        <div id="myBar"></div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div id="ansbox1" class="col-lg-5 col-md-7 col-sm-8 col-8 my-2" onclick="clickChoice(0)">A</div>
+                </div>
+                <div class="row justify-content-center">
+                    <div id="ansbox2" class="col-lg-5 col-md-7 col-sm-8 col-8 my-2" onclick="clickChoice(1)">B</div>
+                </div>
+                <div class="row justify-content-center">
+                    <div id="ansbox3" class="col-lg-5 col-md-7 col-sm-8 col-8 my-2" onclick="clickChoice(2)">C</div>
+                </div>
+                <div class="row justify-content-center">
+                    <div id="ansbox4" class="col-lg-5 col-md-7 col-sm-8 col-8 my-2" onclick="clickChoice(3)">D</div>
+                </div>
+                <div class="row justify-content-center">
+                    <div id="startbox" class="col-lg-3 col-md-4 col-sm-5 col-5 py-3 my-3" onclick="move()">Start</div>
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <div id="ansbox1" class="col-lg-5 col-md-7 col-sm-8 col-8 my-2" onclick="clickChoice(0)">A</div>
-            </div>
-            <div class="row justify-content-center">
-                <div id="ansbox2" class="col-lg-5 col-md-7 col-sm-8 col-8 my-2" onclick="clickChoice(1)">B</div>
-            </div>
-            <div class="row justify-content-center">
-                <div id="ansbox3" class="col-lg-5 col-md-7 col-sm-8 col-8 my-2" onclick="clickChoice(2)">C</div>
-            </div>
-            <div class="row justify-content-center">
-                <div id="ansbox4" class="col-lg-5 col-md-7 col-sm-8 col-8 my-2" onclick="clickChoice(3)">D</div>
-            </div>
-            <div class="row justify-content-center">
-                <div id="startbox" class="col-lg-3 col-md-4 col-sm-5 col-5 py-3 my-3" onclick="move()">Start</div>
-            </div>
+            <a class="btn_change" href="./php/darkmode.php?path=quiz"><?php if($_COOKIE['darkstatus']) echo "<i class='fas fa-lightbulb'></i>"; else echo "<i class='fas fa-moon'></i>";?></a>
+            <!-- footer -->
+            <hr>
+            <p class="text-center <?php if($_COOKIE['darkstatus']) echo "text-light"; else echo "text-dark";?>"><i class="fas fa-flask"></i> Periodic-Table | Web Technology Project (2019)</p>
         </div>
-        <a class="btn_change" href="./php/darkmode.php?path=quiz"><?php if($_COOKIE['darkstatus']) echo "<i class='fas fa-lightbulb'></i>"; else echo "<i class='fas fa-moon'></i>";?></a>
-        <!-- footer -->
-        <hr>
-        <p class="text-center <?php if($_COOKIE['darkstatus']) echo "text-light"; else echo "text-dark";?>"><i class="fas fa-flask"></i> Periodic-Table | Web Technology Project (2019)</p>
     </div>
     <!-- script -->
     <script src="./js/jquery-3.4.1.min.js"></script>
@@ -117,6 +120,7 @@
     <script src="./js/solid.min.js"></script>
     <script src="./js/brands.min.js"></script>
     <script src="./js/myScript/quiz.js"></script>
+    <script src="./js/myScript/loading.js"></script>
 </body>
 
 </html>
