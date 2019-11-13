@@ -20,7 +20,8 @@
     background-image: url(../assets/flags/th.svg);
 }
 
-.element-box {
+.element-box, .show-box {
+    color: black;
     width: 3.813em;
     height: 3.813em;
     border: 1px solid rgba(0, 0, 0, 0.3);
@@ -68,7 +69,7 @@ symbol {
 
 element {
     display: block;
-    width: 4.5em;
+    width: 5em;
     line-height: 1;
     font-size: 0.7em;
     font-style: normal;
@@ -539,4 +540,26 @@ hr {
     60%  {color:#c99cc9;}
     80%  {color:#f2f190;}
     100% {color:#9fbf91;}
+}
+
+#loading .mybox {
+    width: 50vmin;
+    height: 50vmin;
+    position: fixed;
+    left: calc(50% - 25vmin);
+    top: calc(50vh - 25vmin);
+    font-size: 12vmin;
+    animation: moving 3s infinite;
+}
+
+@keyframes moving {
+    33% {
+        transform: rotate(0deg);
+    }
+    66% {
+        transform: rotate(15deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
 }
