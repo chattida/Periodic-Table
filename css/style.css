@@ -246,7 +246,7 @@ th .rotate div {
 #startbox {
     text-align: center;
     color: white;
-    background-color: black;
+    background-color: #505050;
     font-size: 2em;
     display: block;
 }
