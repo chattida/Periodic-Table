@@ -573,3 +573,11 @@ hr {
         transform: rotate(0deg);
     }
 }
+
+.outline_top {
+    border-top: 10px solid #343a40
+}
+
+.outline_right {
+    border-right: 10px solid #343a40
+}

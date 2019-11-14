@@ -540,3 +540,15 @@ th .rotate div {
         transform: rotate(0deg);
     }
 }
+
+.cl_more {
+    background: #f8f9fa;
+}
+
+.outline_top {
+    border-top: 10px solid #f8f9fa
+}
+
+.outline_right {
+    border-right: 10px solid #f8f9fa
+}

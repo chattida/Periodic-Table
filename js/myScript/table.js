@@ -180,17 +180,20 @@ function showTable(obj) {
                 continue
             } else if (i == 6 && j == 3) {
                 // row = 6, col = 3
-                txt += `<td class="element-box text-center cl_Lanthanide" id="119" onmouseover="mygroup('more1')"><number>57-71</number></td>`
+                txt += `<td class="element-box text-center cl_Lanthanide" onmouseover="mygroup('more1')"><number>57-71</number></td>`
             } else if (i == 7 && j == 3) {
                 // row = 7, col = 3
-                txt += `<td class="element-box text-center cl_Actinide" id="120" onmouseover="mygroup('more2')"><number>89-103</number></td>`
+                txt += `<td class="element-box text-center cl_Actinide" onmouseover="mygroup('more2')"><number>89-103</number></td>`
+            } else if ((i == 8 && j == 3) || (i == 9 && j == 3) || (i == 10 && j == 3)) {
+                if (getCookie("darkstatus") == "1") txt += `<td class="bg-dark"></td>`
+                else if (getCookie("darkstatus") == "0") txt += `<td class="cl_more"></td>`
             } else if (i == 8) {
                 // row = 8
                 txt += `<td class="empty-box"></td>`
-            } else if (i == 9 && j < 4) {
+            } else if (i == 9 && j < 3) {
                 // row = 9, col < 4
                 txt += `<td class="empty-box"></td>`
-            } else if (i == 10 && j < 4) {
+            } else if (i == 10 && j < 3) {
                 // row = 10, col < 4
                 txt += `<td class="empty-box"></td>`
             } else {
@@ -205,6 +208,8 @@ function showTable(obj) {
                 }
                 txt += `<td class="element-box `
                 txt += colorTable(obj[count].Type)
+                if (obj[count].AtomicNumber >= 57 && obj[count].AtomicNumber <= 71) txt += ` outline_top`
+                if (obj[count].AtomicNumber == 71 || obj[count].AtomicNumber == 103) txt += ` outline_right`
                 txt += `" id="${obj[count].AtomicNumber}" onmouseover="toShow(${obj[count].AtomicNumber})"> 
                             <a class="datalink" href="./data.php?id=${count + 1}">
                             <box>
