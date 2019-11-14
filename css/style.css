@@ -231,7 +231,7 @@ bigMass {
 }
 
 .rotate div {
-    transform: translate(0px, 120px) rotate(-90deg);
+    transform: translate(0px, 123px) rotate(-90deg);
 }
 
 th .rotate div {
@@ -243,7 +243,7 @@ th .rotate div {
 }
 
 .rotateFix {
-    transform: translate(0px, 20px) rotate(-90deg);
+    transform: translate(0px, 30px) rotate(-90deg);
     white-space: nowrap;
     width: 20px;
 }
