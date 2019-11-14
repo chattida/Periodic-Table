@@ -20,7 +20,7 @@ function showMember(obj) {
                             <div class="col-lg-4 justify-content-center">
                                 <img class="profile" src="${obj[i].path}" alt="${obj[i].name_th}">
                             </div>
-                            <div class="col-lg-8">
+                            <div class="col-lg-7 mx-auto my-2">
                                 <p class="my-0 text-muted idnumber">${obj[i].id}</p>
                                 <h5 class="mb-1">${obj[i].name_th}</h5>
                                 <p class="my-0 text-muted">${obj[i].role}</p>
@@ -45,7 +45,7 @@ function showMember(obj) {
                             <div class="col-lg-4 justify-content-center">
                                 <img class="profile" src="${obj[i].path}" alt="${obj[i].name_en}">
                             </div>
-                            <div class="col-lg-8">
+                            <div class="col-lg-7 mx-auto my-2">
                                 <p class="my-0 text-muted idnumber">${obj[i].id}</p>
                                 <h5 class="mb-1">${obj[i].name_en}</h5>
                                 <p class="my-0 text-muted">${obj[i].role}</p>
