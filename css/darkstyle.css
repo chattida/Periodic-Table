@@ -248,6 +248,12 @@ th .rotate div {
     padding: 0;
 }
 
+.rotateFix {
+    transform: translate(0px, 20px) rotate(-90deg);
+    white-space: nowrap;
+    width: 20px;
+}
+
 #startbox {
     text-align: center;
     color: white;
