@@ -207,10 +207,8 @@
                     ?>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-2 col-md-4 col-sm-6 col-6 mx-auto">
-                    <a href="<?php echo ("{$json_data2['wiki'][$id]['en']}"); ?>"><button type="button" class="btn btn-purple py-2 px-3 no-wrap">More data <i class="fab fa-wikipedia-w"></i></button></a>
-                </div>
+            <div class="text-center">
+                <a href="<?php echo ("{$json_data2['wiki'][$id]['en']}"); ?>"><button type="button" class="btn btn-purple py-2 px-3 no-wrap">More data <i class="fab fa-wikipedia-w"></i></button></a>
             </div>
             <a class="btn_change" href="<?php echo "./php/darkmode.php?path=data&id={$id_}"?>"><?php if($_COOKIE['darkstatus']) echo "<i class='fas fa-lightbulb'></i>"; else echo "<i class='fas fa-moon'></i>";?></a>
             <!-- footer -->
