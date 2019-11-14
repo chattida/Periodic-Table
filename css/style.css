@@ -171,7 +171,7 @@ bigMass {
 }
 
 .myType th {
-    height: 25px;
+    max-height: 25px;
     border: 3px solid black;
 }
 
@@ -249,12 +249,12 @@ th .rotate div {
     background-color: #505050;
     font-size: 2em;
     display: block;
+    transition: color 1s, background-color 1s;
 }
 
 #startbox:hover {
     color: black;
     background-color: #69d422;
-    transition: color 1s, background-color 1s;
 }
 
 #ansbox1 {
@@ -263,12 +263,12 @@ th .rotate div {
     font-size: 3em;
     display: none;
     text-align: center;
+    transition: color 1s, background-color 1s;
 }
 
 #ansbox1:hover {
     color: black;
     background-color: #F8A891;
-    transition: color 1s, background-color 1s;
 }
 
 #ansbox2 {
@@ -277,12 +277,12 @@ th .rotate div {
     font-size: 3em;
     display: none;
     text-align: center;
+    transition: color 1s, background-color 1s;
 }
 
 #ansbox2:hover {
     color: black;
     background-color: #F2F190;
-    transition: color 1s, background-color 1s;
 }
 
 #ansbox3 {
@@ -291,12 +291,12 @@ th .rotate div {
     font-size: 3em;
     display: none;
     text-align: center;
+    transition: color 1s, background-color 1s;
 }
 
 #ansbox3:hover {
     color: black;
     background-color: #9FBF91;
-    transition: color 1s, background-color 1s;
 }
 
 #ansbox4 {
@@ -305,12 +305,12 @@ th .rotate div {
     font-size: 3em;
     display: none;
     text-align: center;
+    transition: color 1s, background-color 1s;
 }
 
 #ansbox4:hover {
     color: black;
     background-color: #5B8EDB;
-    transition: color 1s, background-color 1s;
 }
 
 #myProgress {
