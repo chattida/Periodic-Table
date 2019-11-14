@@ -97,7 +97,7 @@ function showTable(obj) {
                     txt += `<center><table class="myType text-center">
                                 <tr>
                                     <th colspan="5" class="title_type" onmouseover="mygroup('Metal')"><a>โลหะ</a></th>
-                                    <th rowspan="4" class="cl_Metalloid" onmouseover="mygroup('Metalloid')"><div class="rotate"><div><a>กึ่งโลหะ</a></div></div></th>
+                                    <th rowspan="4" class="cl_Metalloid" onmouseover="mygroup('Metalloid')"><div class="rotateFix"><div><a>กึ่งโลหะ</a></div></div></th>
                                     <th colspan="2" class="title_type" onmouseover="mygroup('Non-metal')"><a>อโลหะ</a></th>
                                 <tr>
                                 <tr>
@@ -117,7 +117,7 @@ function showTable(obj) {
                     txt += `<center><table class="myType text-center">
                                 <tr>
                                     <th colspan="5" class="title_type" onmouseover="mygroup('Metal')"><a>Metal</a></th>
-                                    <th rowspan="4" class="cl_Metalloid" onmouseover="mygroup('Metalloid')"><div class="rotate"><div><a>Metalloid</a></div></div></th>
+                                    <th rowspan="4" class="cl_Metalloid" onmouseover="mygroup('Metalloid')"><div class="rotateFix"><div><a>Metalloid</a></div></div></th>
                                     <th colspan="3" class="title_type" onmouseover="mygroup('Non-metal')"><a>NonMetal</a></th>
                                 <tr>
                                 <tr>
