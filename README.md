@@ -15,7 +15,7 @@ ______
 # Preview
 ### • Table
 ![](README/1.png)
-### • Darkmode
+### • Dark Mode
 ![](README/2.png)
 ### • Search
 ![](README/3.png)
